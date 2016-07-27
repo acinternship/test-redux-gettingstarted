@@ -3,6 +3,32 @@
   padding: 0;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: sans-serif;
+}
+
+//
+//todobox {
+//  display: flex;
+//  flex-direction: row;
+//  align-items: center;
+//  textarea {
+//    height: 5em;
+//    width: 10em;
+//    border: none;
+//    border-radius: 15%;
+//  }
+//  button {
+//    width: 2.5em;
+//    background-color: lightblue;
+//    border: none;
+//    border-radius: 15%;
+//    color: white;
+//  }
+//}
 div {
   align-items: center;
   display: flex;
