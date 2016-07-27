@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore } from 'redux'
 
+// REDUX STORE
+
 const counter = (state = 0, action) => {
   switch (action.type) {
     case 'INCREMENT':
@@ -15,15 +17,21 @@ const counter = (state = 0, action) => {
   }
 }
 
+// REACT COMPONENTS
+
 const Counter = ({value, onIncrement, onDecrement}) => (
   <div>
     <h1>{value}</h1>
-    <button onClick={onIncrement}>+</button>
-    <button onClick={onDecrement}>-</button>
+    <buttonbox>
+      <button onClick={onIncrement}>+</button>
+      <button onClick={onDecrement}>-</button>
+    </buttonbox>
   </div>
 )
 
-const store = createStore(counter);
+// OUTPUT
+
+const store = createStore(counter)
 
 const App = () => {
   ReactDOM.render(

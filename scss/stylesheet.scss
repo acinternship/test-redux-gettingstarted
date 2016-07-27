@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+buttonbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+button {
+  width: 2em;
+  border: 1px solid white;
+  border-radius: 10%;
+  &:first-of-type {
+    background-color: lightseagreen;
+  }
+  &:last-of-type {
+    background-color: lightsalmon;
+  }
+}
+
+h1 {
+  align-self: center;
+}
