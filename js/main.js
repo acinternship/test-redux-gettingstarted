@@ -2,101 +2,97 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { createStore } from 'redux'
 
-//// Reducer
-//const todoapp = (state = [], action) => {
-//  switch (action.type) {
-//    case 'ADD_TODO':
-//      return [
-//        ...state,
-//        {
-//          id: action.id,
-//          text: action.text,
-//          completed: false
-//        }
-//      ]
-//    
-//    default:
-//      return state
-//  }
-//}
-//
-//// React components
-//const TodoAdd = (add, text) => (
-//  <div>
-//    <textarea>{text}</textarea>
-//    <button onClick={add}>ADD TODO</button>
-//  </div>
-//)
-//
-//// Output
-//const store = createStore(todoapp)
-//
-//const App = () => (
-//  ReactDOM.render(
-//    <TodoAdd
-//      text={store.getState().text}
-//      add={store.dispatch({type: 'ADD_TODO'})}
-//    />,
-//    document.getElementById('todoadd')
-//  )
-//)
-//
-//store.subscribe(App)
-//App()
-
-/*** REDUX COUNTER ***/
+/*** REDUX TODO APP ***/
 
 // REDUX STORE
-const counter = (state = 0, action) => {
+const counter = (state = [], action) => {
   switch (action.type) {
-    case 'INCREMENT':
-      return state + 1
-    
-    case 'DECREMENT':
-      return state - 1
+    case 'ADD_TODO':
+      return [
+        ...state,
+        {
+          id: action.id,
+          text: action.text,
+          completed: false
+        }
+      ]
     
     default:
       return state
   }
 }
 
-// REACT COMPONENTS
-const Counter = ({value, onIncrement, onDecrement}) => (
-  <div>
-    <h1>{value}</h1>
-    <buttonbox>
-      <button onClick={onIncrement}>+</button>
-      <button onClick={onDecrement}>-</button>
-    </buttonbox>
-  </div>
-)
-
-const NewTodo = ({value, onIncrement}) => (
-  <div>
-    <textarea>{value}</textarea>
-    <button onClick={onIncrement}>+</button>
-  </div>
-)
-
-// OUTPUT
 const store = createStore(counter)
 
-const App = () => {
-  ReactDOM.render(
-    <Counter
-      value={store.getState()}
-      onIncrement={() => store.dispatch({type: 'INCREMENT'})}
-      onDecrement={() => store.dispatch({type: 'DECREMENT'})}
-    />,
-    document.getElementById('app')
-  )
+// REACT COMPONENTS
+
+const TodoItem = (props) => (
+    <tr>
+      <td>{props.data.id}</td>
+      <td>{props.data.text}</td>
+    </tr>
+)
+
+var TodoList = React.createClass({
+  render: function() {
+    let rows = store.getState().map(
+      item => <TodoItem key={item.id} data={item}/>
+    )
+    
+    return (
+      <table className="hover">
+        <thead>
+          <tr>
+            <th width="100"></th>
+            <th width="500"></th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows}
+        </tbody>
+      </table>
+    )
+  }
+})
+
+var NewTodo = React.createClass({
+  getInitialState: function() {
+    return {text: 'Type in a new task'}
+  },
   
+  updateText: function(event) {
+    this.setState({text: event.target.value})
+  },
+  
+  addTodo: function() {
+    store.dispatch({
+      type: 'ADD_TODO',
+      id: store.getState().length,
+      text: this.state.text
+    })
+  },
+  
+  render: function() {
+    return (
+      <div className="input-group">
+        <input className="input-group-field" type="text" value={this.state.text} onChange={this.updateText}/>
+        <div className="input-group-button">
+          <input type="submit" className="button" value="Add item" onClick={this.addTodo}></input>
+        </div>
+      </div>
+    )
+  }
+})
+
+// OUTPUT
+
+const App = () => {
+  console.log(store.getState())
   ReactDOM.render(
-    <NewTodo
-      value={store.getState()}
-      onIncrement={() => store.dispatch({type: 'INCREMENT'})}
-    />,
-    document.getElementById('newtodo')
+    <NewTodo/>, document.getElementById('newtodo')
+  )
+  ReactDOM.render(
+    <TodoList/>, document.getElementById('todolist')
   )
 }
 
