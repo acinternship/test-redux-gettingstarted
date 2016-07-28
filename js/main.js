@@ -70,16 +70,17 @@ var NewTodo = React.createClass({
       id: store.getState().length,
       text: this.state.text
     })
+    this.state.text = 'Type in a new task'
   },
   
   render: function() {
     return (
-      <div className="input-group">
+      <newtodocontainer className="input-group">
         <input className="input-group-field" type="text" value={this.state.text} onChange={this.updateText}/>
         <div className="input-group-button">
           <input type="submit" className="button" value="Add item" onClick={this.addTodo}></input>
         </div>
-      </div>
+      </newtodocontainer>
     )
   }
 })
@@ -88,9 +89,11 @@ var NewTodo = React.createClass({
 
 const App = () => {
   console.log(store.getState())
+  
   ReactDOM.render(
     <NewTodo/>, document.getElementById('newtodo')
   )
+  
   ReactDOM.render(
     <TodoList/>, document.getElementById('todolist')
   )

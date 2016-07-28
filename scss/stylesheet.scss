@@ -1,59 +1,28 @@
+@import '../node_modules/foundation-sites/scss/foundation';
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  display: flex;
+  @include flex-grid-row;
+  // Display:
+  // Display:
   flex-direction: column;
   align-items: center;
-  font-family: sans-serif;
 }
 
-//
-//todobox {
-//  display: flex;
-//  flex-direction: row;
-//  align-items: center;
-//  textarea {
-//    height: 5em;
-//    width: 10em;
-//    border: none;
-//    border-radius: 15%;
-//  }
-//  button {
-//    width: 2.5em;
-//    background-color: lightblue;
-//    border: none;
-//    border-radius: 15%;
-//    color: white;
-//  }
-//}
-div {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  font-family: sans-serif;
-}
+// CUSTOM HTML TAGS
+todocontainer {}
 
-buttonbox {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
+todolistcontainer {}
 
-button {
-  width: 2em;
-  border: 1px solid white;
-  border-radius: 10%;
-  &:first-of-type {
-    background-color: lightseagreen;
+newtodocontainer {
+  @include input-group;
+  input {
+    border-radius: 10em;
   }
-  &:last-of-type {
-    background-color: lightsalmon;
+  .input-group-button {
+    background-color: red;
   }
-}
-
-h1 {
-  align-self: center;
 }
