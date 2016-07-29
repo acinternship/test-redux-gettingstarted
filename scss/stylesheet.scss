@@ -18,7 +18,6 @@ todocontainer {}
 todolistcontainer {}
 
 newtodocontainer {
-  @include input-group;
   input {
     border-radius: 10em;
   }
