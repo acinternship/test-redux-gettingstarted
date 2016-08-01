@@ -87,13 +87,19 @@ class NewTodo extends React.Component {
   
   render() {
     return (
-      <newtodocontainer className="input-group">
-        <input className="input-group-field" type="text" placeholder="Type in your new task" onChange={this.setText} ref="newtodotext"/>
-        
-        <div className="input-group-button">
-          <input type="submit" className="button" value="Add item" onClick={this.addTodo}></input>
-        </div>
-      </newtodocontainer>
+      <newtodo>
+        <inputtask>
+          <input placeholder="Type in your new task"
+               type="text"
+               onChange={this.setText}
+               ref="newtodotext"/>
+        </inputtask>
+        <addtask>
+          <input type="submit"
+                 value="Add item"
+                 onClick={this.addTodo}/>
+        </addtask>
+      </newtodo>
     )
   }
 }

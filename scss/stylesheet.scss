@@ -1,27 +1,44 @@
+// IMPORTS
+@import '_settings';
 @import '../node_modules/foundation-sites/scss/foundation';
+
+@include foundation-everything(true);
+@include foundation-flex-classes;
+@include foundation-flex-grid;
+
+// HTML ELEMENTS
 * {
   margin: 0;
   padding: 0;
 }
 
 body {
-  @include flex-grid-row;
-  // Display:
-  // Display:
-  flex-direction: column;
-  align-items: center;
+  background-color: green;
 }
 
-// CUSTOM HTML TAGS
-todocontainer {}
+// CUSTOM HTML ELEMENTS
+newtodo {
+  @extend .row, .align-center;
+  
+  background-color: red;
+  
+  inputtask {
+    @extend .large-6, .large-offset-1, .columns;
+    
+    background-color: blue;
+  }
+  
+  addtask {
+    @extend .large-4, .columns;
+    
+    background-color: yellow;
+    
+    input {
+      @extend .button;
+    }
+  }
+}
+
+todoitemcontainer {}
 
 todolistcontainer {}
-
-newtodocontainer {
-  input {
-    border-radius: 10em;
-  }
-  .input-group-button {
-    background-color: red;
-  }
-}
