@@ -21,8 +21,12 @@ const todoapp = (state = [], action) => {
     case 'EDIT_TODO':
       return state
       
-    case 'REMOVE_TODO':
-      return state.splice(action.id, 1)
+    case 'REMOVE_TODO':      
+      for (var i = 0; i < store.getState().length; i++) {
+        if (state[i].id === action.id) {
+          state.splice(i, 1)
+        }
+      }
     
     case 'TOGGLE_TODO':
       return state.map(todo => {
@@ -41,6 +45,8 @@ const todoapp = (state = [], action) => {
 
 const store = createStore(todoapp)
 
+var todoID = store.getState().length // Used to set unique identifiers to each task
+
 /*** REACT COMPONENTS ***/
 
 class NewTodo extends React.Component {
@@ -48,12 +54,14 @@ class NewTodo extends React.Component {
   constructor() {
     super()
     
-    this.state = {text: 'Type in a new task'}
+    this.state = {
+      text: 'Type in your new task'
+    }
     
     this.setText = this.setText.bind(this)
     this.addTodo = this.addTodo.bind(this)
   }
-  
+    
   setText(event) {
     this.setState({text: event.target.value})
   }
@@ -61,15 +69,20 @@ class NewTodo extends React.Component {
   addTodo() {
     store.dispatch({
       type: 'ADD_TODO',
-      id: store.getState().length,
+      id: todoID++,
       text: this.state.text
     })
+    
+    // Resets input value afterwards
+    this.setState({text: 'Type in your new task'})
+    ReactDOM.findDOMNode(this.refs.newtodotext).value = ''
   }
   
   render() {
     return (
       <newtodocontainer className="input-group">
-        <input className="input-group-field" type="text" value={this.state.text} onChange={this.setText}/>
+        <input className="input-group-field" type="text" placeholder={this.state.text} onChange={this.setText} ref="newtodotext"/>
+        
         <div className="input-group-button">
           <input type="submit" className="button" value="Add item" onClick={this.addTodo}></input>
         </div>
@@ -108,9 +121,11 @@ class TodoItem extends React.Component {
     return (
       <tr>
         <td>
-          <input type="radio" onClick={this.toggleTodo}></input>
+          <input type="checkbox" onClick={this.toggleTodo}></input>
         </td>
-        <td>{this.props.data.id},{this.props.data.text}</td>
+        <td>
+          <textarea value={this.props.data.text}></textarea>
+        </td>
         <td onClick={this.removeTodo}>x</td>
       </tr>
     )
