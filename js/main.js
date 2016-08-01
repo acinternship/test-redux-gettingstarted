@@ -19,7 +19,14 @@ const todoapp = (state = [], action) => {
       ]
     
     case 'EDIT_TODO':
-      return state
+      return state.map(todo => {
+        if (todo.id !== action.id) return todo
+        
+        return {
+          ...todo,
+          text: action.text
+        }
+      })
       
     case 'REMOVE_TODO':      
       for (var i = 0; i < store.getState().length; i++) {
@@ -55,7 +62,7 @@ class NewTodo extends React.Component {
     super()
     
     this.state = {
-      text: 'Type in your new task'
+      text: ''
     }
     
     this.setText = this.setText.bind(this)
@@ -74,14 +81,14 @@ class NewTodo extends React.Component {
     })
     
     // Resets input value afterwards
-    this.setState({text: 'Type in your new task'})
+    this.setState({text: ''})
     ReactDOM.findDOMNode(this.refs.newtodotext).value = ''
   }
   
   render() {
     return (
       <newtodocontainer className="input-group">
-        <input className="input-group-field" type="text" placeholder={this.state.text} onChange={this.setText} ref="newtodotext"/>
+        <input className="input-group-field" type="text" placeholder="Type in your new task" onChange={this.setText} ref="newtodotext"/>
         
         <div className="input-group-button">
           <input type="submit" className="button" value="Add item" onClick={this.addTodo}></input>
@@ -97,11 +104,23 @@ class TodoItem extends React.Component {
   constructor(props) {
     super()
     
+    this.editText = this.editText.bind(this)
+    this.editTodo = this.editTodo.bind(this)
     this.removeTodo = this.removeTodo.bind(this)
     this.toggleTodo = this.toggleTodo.bind(this)
   }
   
-  editTodo() {} // Still to be implemented
+  editText(event) {
+    this.setState({text: event.target.value})
+  }
+  
+  editTodo(event) {
+    store.dispatch({
+      type: 'EDIT_TODO',
+      id: this.props.data.id,
+      text: this.state.text
+    })
+  }
   
   removeTodo() {
     store.dispatch({
@@ -124,8 +143,9 @@ class TodoItem extends React.Component {
           <input type="checkbox" onClick={this.toggleTodo}></input>
         </td>
         <td>
-          <textarea value={this.props.data.text}></textarea>
+          <input defaultValue={this.props.data.text} onChange={this.editText}/>
         </td>
+        <td onClick={this.editTodo}>e</td>
         <td onClick={this.removeTodo}>x</td>
       </tr>
     )
@@ -146,6 +166,7 @@ class TodoList extends React.Component {
           <tr>
             <th width="50"></th>
             <th width="500"></th>
+            <th width="50"></th>
             <th width="50"></th>
           </tr>
         </thead>
