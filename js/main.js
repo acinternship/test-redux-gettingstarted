@@ -89,14 +89,15 @@ class NewTodo extends React.Component {
     return (
       <newtodo>
         <inputtask>
-          <input placeholder="Type in your new task"
-               type="text"
-               onChange={this.setText}
-               ref="newtodotext"/>
+          <textarea placeholder="Type in your new task"
+                    rows="3"
+                    type="text"
+                    onChange={this.setText}
+                    ref="newtodotext"/>
         </inputtask>
         <addtask>
           <input type="submit"
-                 value="Add item"
+                 value="ADD TASK"
                  onClick={this.addTodo}/>
         </addtask>
       </newtodo>

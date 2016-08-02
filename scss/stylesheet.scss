@@ -1,10 +1,14 @@
-// IMPORTS
+// IMPORTS & VARIABLES
 @import '_settings';
 @import '../node_modules/foundation-sites/scss/foundation';
 
 @include foundation-everything(true);
 @include foundation-flex-classes;
 @include foundation-flex-grid;
+
+@import 'https://fonts.googleapis.com/css?family=Shadows+Into+Light';
+
+$background: #FFFFFF;
 
 // HTML ELEMENTS
 * {
@@ -13,28 +17,46 @@
 }
 
 body {
-  background-color: green;
+//  background-color: green;
 }
 
 // CUSTOM HTML ELEMENTS
 newtodo {
-  @extend .row, .align-center;
+  @extend .row, .collapse, .align-center;
   
-  background-color: red;
+  margin-top: 2em;
+  
+//  background-color: red;
   
   inputtask {
-    @extend .large-6, .large-offset-1, .columns;
+    @extend .small-12, .columns;
     
-    background-color: blue;
+//    background-color: blue;
+    
+    textarea {
+      border-color: $background !important;
+      box-shadow: none !important;
+      font-family: 'Shadows Into Light', cursive !important;
+      font-size: 1.5em !important;
+      resize: none;
+    }
   }
   
   addtask {
-    @extend .large-4, .columns;
+    @extend .small-4, .columns;
     
-    background-color: yellow;
+//    background-color: yellow;
     
     input {
-      @extend .button;
+//      @extend .button;
+      width: 100%;
+      
+      background-color: $background;
+      border: 1px solid #F42041;
+      color: #F42041;
+      font-family: 'Shadows Into Light', cursive !important;
+      font-size: 1.5em !important;
+      font-weight: bold;
     }
   }
 }

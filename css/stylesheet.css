@@ -11,6 +11,7 @@
  * 2. Prevent iOS and IE text size adjust after device orientation change,
  *    without disabling user zoom.
  */
+@import "https://fonts.googleapis.com/css?family=Shadows+Into+Light";
 html {
   font-family: sans-serif;
   /* 1 */
@@ -444,7 +445,7 @@ button {
         margin-right: -0.9375rem; } }
   .row.expanded, newtodo.expanded {
     max-width: none; }
-  .row.collapse > .column, newtodo.collapse > .column, .row.collapse > .columns, newtodo.collapse > .columns, newtodo .row.collapse > inputtask, newtodo.collapse > inputtask, newtodo .row.collapse > addtask, newtodo.collapse > addtask {
+  .row.collapse > .column, newtodo > .column, .row.collapse > .columns, newtodo > .columns, newtodo .row.collapse > inputtask, newtodo > inputtask, newtodo .row.collapse > addtask, newtodo > addtask {
     padding-left: 0;
     padding-right: 0; }
 
@@ -488,7 +489,7 @@ button {
 .small-offset-2 {
   margin-left: 16.66667%; }
 
-.small-4 {
+.small-4, newtodo addtask {
   flex: 0 0 33.33333%;
   max-width: 33.33333%; }
 
@@ -544,7 +545,7 @@ button {
 .small-offset-10 {
   margin-left: 83.33333%; }
 
-.small-12 {
+.small-12, newtodo inputtask {
   flex: 0 0 100%;
   max-width: 100%; }
 
@@ -803,7 +804,7 @@ button {
     flex: 0 0 16.66667%;
     max-width: 16.66667%; }
 
-  .large-offset-1, newtodo inputtask {
+  .large-offset-1 {
     margin-left: 8.33333%; }
 
   .large-3 {
@@ -813,7 +814,7 @@ button {
   .large-offset-2 {
     margin-left: 16.66667%; }
 
-  .large-4, newtodo addtask {
+  .large-4 {
     flex: 0 0 33.33333%;
     max-width: 33.33333%; }
 
@@ -827,7 +828,7 @@ button {
   .large-offset-4 {
     margin-left: 33.33333%; }
 
-  .large-6, newtodo inputtask {
+  .large-6 {
     flex: 0 0 50%;
     max-width: 50%; }
 
@@ -1492,7 +1493,7 @@ select {
   .form-error.is-visible {
     display: block; }
 
-.button, newtodo addtask input {
+.button {
   display: inline-block;
   text-align: center;
   line-height: 1;
@@ -1507,97 +1508,97 @@ select {
   font-size: 0.9rem;
   background-color: #2199e8;
   color: #fefefe; }
-  [data-whatinput='mouse'] .button, [data-whatinput='mouse'] newtodo addtask input, newtodo addtask [data-whatinput='mouse'] input {
+  [data-whatinput='mouse'] .button {
     outline: 0; }
-  .button:hover, newtodo addtask input:hover, .button:focus, newtodo addtask input:focus {
+  .button:hover, .button:focus {
     background-color: #1583cc;
     color: #fefefe; }
-  .button.tiny, newtodo addtask input.tiny {
+  .button.tiny {
     font-size: 0.6rem; }
-  .button.small, newtodo addtask input.small {
+  .button.small {
     font-size: 0.75rem; }
-  .button.large, newtodo addtask input.large {
+  .button.large {
     font-size: 1.25rem; }
-  .button.expanded, newtodo addtask input.expanded {
+  .button.expanded {
     display: block;
     width: 100%;
     margin-left: 0;
     margin-right: 0; }
-  .button.primary, newtodo addtask input.primary {
+  .button.primary {
     background-color: #2199e8;
     color: #fefefe; }
-    .button.primary:hover, newtodo addtask input.primary:hover, .button.primary:focus, newtodo addtask input.primary:focus {
+    .button.primary:hover, .button.primary:focus {
       background-color: #147cc0;
       color: #fefefe; }
-  .button.secondary, newtodo addtask input.secondary {
+  .button.secondary {
     background-color: #777;
     color: #fefefe; }
-    .button.secondary:hover, newtodo addtask input.secondary:hover, .button.secondary:focus, newtodo addtask input.secondary:focus {
+    .button.secondary:hover, .button.secondary:focus {
       background-color: #5f5f5f;
       color: #fefefe; }
-  .button.success, newtodo addtask input.success {
+  .button.success {
     background-color: #3adb76;
     color: #fefefe; }
-    .button.success:hover, newtodo addtask input.success:hover, .button.success:focus, newtodo addtask input.success:focus {
+    .button.success:hover, .button.success:focus {
       background-color: #22bb5b;
       color: #fefefe; }
-  .button.warning, newtodo addtask input.warning {
+  .button.warning {
     background-color: #ffae00;
     color: #fefefe; }
-    .button.warning:hover, newtodo addtask input.warning:hover, .button.warning:focus, newtodo addtask input.warning:focus {
+    .button.warning:hover, .button.warning:focus {
       background-color: #cc8b00;
       color: #fefefe; }
-  .button.alert, newtodo addtask input.alert {
+  .button.alert {
     background-color: #ec5840;
     color: #fefefe; }
-    .button.alert:hover, newtodo addtask input.alert:hover, .button.alert:focus, newtodo addtask input.alert:focus {
+    .button.alert:hover, .button.alert:focus {
       background-color: #da3116;
       color: #fefefe; }
-  .button.hollow, newtodo addtask input.hollow {
+  .button.hollow {
     border: 1px solid #2199e8;
     color: #2199e8; }
-    .button.hollow, newtodo addtask input.hollow, .button.hollow:hover, newtodo addtask input.hollow:hover, .button.hollow:focus, newtodo addtask input.hollow:focus {
+    .button.hollow, .button.hollow:hover, .button.hollow:focus {
       background-color: transparent; }
-    .button.hollow:hover, newtodo addtask input.hollow:hover, .button.hollow:focus, newtodo addtask input.hollow:focus {
+    .button.hollow:hover, .button.hollow:focus {
       border-color: #0c4d78;
       color: #0c4d78; }
-    .button.hollow.primary, newtodo addtask input.hollow.primary {
+    .button.hollow.primary {
       border: 1px solid #2199e8;
       color: #2199e8; }
-      .button.hollow.primary:hover, newtodo addtask input.hollow.primary:hover, .button.hollow.primary:focus, newtodo addtask input.hollow.primary:focus {
+      .button.hollow.primary:hover, .button.hollow.primary:focus {
         border-color: #0c4d78;
         color: #0c4d78; }
-    .button.hollow.secondary, newtodo addtask input.hollow.secondary {
+    .button.hollow.secondary {
       border: 1px solid #777;
       color: #777; }
-      .button.hollow.secondary:hover, newtodo addtask input.hollow.secondary:hover, .button.hollow.secondary:focus, newtodo addtask input.hollow.secondary:focus {
+      .button.hollow.secondary:hover, .button.hollow.secondary:focus {
         border-color: #3c3c3c;
         color: #3c3c3c; }
-    .button.hollow.success, newtodo addtask input.hollow.success {
+    .button.hollow.success {
       border: 1px solid #3adb76;
       color: #3adb76; }
-      .button.hollow.success:hover, newtodo addtask input.hollow.success:hover, .button.hollow.success:focus, newtodo addtask input.hollow.success:focus {
+      .button.hollow.success:hover, .button.hollow.success:focus {
         border-color: #157539;
         color: #157539; }
-    .button.hollow.warning, newtodo addtask input.hollow.warning {
+    .button.hollow.warning {
       border: 1px solid #ffae00;
       color: #ffae00; }
-      .button.hollow.warning:hover, newtodo addtask input.hollow.warning:hover, .button.hollow.warning:focus, newtodo addtask input.hollow.warning:focus {
+      .button.hollow.warning:hover, .button.hollow.warning:focus {
         border-color: #805700;
         color: #805700; }
-    .button.hollow.alert, newtodo addtask input.hollow.alert {
+    .button.hollow.alert {
       border: 1px solid #ec5840;
       color: #ec5840; }
-      .button.hollow.alert:hover, newtodo addtask input.hollow.alert:hover, .button.hollow.alert:focus, newtodo addtask input.hollow.alert:focus {
+      .button.hollow.alert:hover, .button.hollow.alert:focus {
         border-color: #881f0e;
         color: #881f0e; }
-  .button.disabled, newtodo addtask input.disabled, .button[disabled], newtodo addtask input[disabled] {
+  .button.disabled, .button[disabled] {
     opacity: 0.25;
     cursor: not-allowed; }
-    .button.disabled:hover, newtodo addtask input.disabled:hover, .button.disabled:focus, newtodo addtask input.disabled:focus, .button[disabled]:hover, newtodo addtask input[disabled]:hover, .button[disabled]:focus, newtodo addtask input[disabled]:focus {
+    .button.disabled:hover, .button.disabled:focus, .button[disabled]:hover, .button[disabled]:focus {
       background-color: #2199e8;
       color: #fefefe; }
-  .button.dropdown::after, newtodo addtask input.dropdown::after {
+  .button.dropdown::after {
     content: '';
     display: block;
     width: 0;
@@ -1611,7 +1612,7 @@ select {
     float: right;
     margin-left: 1em;
     display: inline-block; }
-  .button.arrow-only::after, newtodo addtask input.arrow-only::after {
+  .button.arrow-only::after {
     margin-left: 0;
     float: none;
     top: -0.1em; }
@@ -1744,70 +1745,70 @@ select {
     order: 1; }
   .button-group::after {
     clear: both; }
-  .button-group .button, .button-group newtodo addtask input, newtodo addtask .button-group input {
+  .button-group .button {
     margin: 0;
     margin-right: 1px;
     margin-bottom: 1px;
     font-size: 0.9rem;
     flex: 0 0 auto; }
-    .button-group .button:last-child, .button-group newtodo addtask input:last-child, newtodo addtask .button-group input:last-child {
+    .button-group .button:last-child {
       margin-right: 0; }
-  .button-group.tiny .button, .button-group.tiny newtodo addtask input, newtodo addtask .button-group.tiny input {
+  .button-group.tiny .button {
     font-size: 0.6rem; }
-  .button-group.small .button, .button-group.small newtodo addtask input, newtodo addtask .button-group.small input {
+  .button-group.small .button {
     font-size: 0.75rem; }
-  .button-group.large .button, .button-group.large newtodo addtask input, newtodo addtask .button-group.large input {
+  .button-group.large .button {
     font-size: 1.25rem; }
-  .button-group.expanded .button, .button-group.expanded newtodo addtask input, newtodo addtask .button-group.expanded input {
+  .button-group.expanded .button {
     flex: 1 1 0px; }
-  .button-group.primary .button, .button-group.primary newtodo addtask input, newtodo addtask .button-group.primary input {
+  .button-group.primary .button {
     background-color: #2199e8;
     color: #fefefe; }
-    .button-group.primary .button:hover, .button-group.primary newtodo addtask input:hover, newtodo addtask .button-group.primary input:hover, .button-group.primary .button:focus, .button-group.primary newtodo addtask input:focus, newtodo addtask .button-group.primary input:focus {
+    .button-group.primary .button:hover, .button-group.primary .button:focus {
       background-color: #147cc0;
       color: #fefefe; }
-  .button-group.secondary .button, .button-group.secondary newtodo addtask input, newtodo addtask .button-group.secondary input {
+  .button-group.secondary .button {
     background-color: #777;
     color: #fefefe; }
-    .button-group.secondary .button:hover, .button-group.secondary newtodo addtask input:hover, newtodo addtask .button-group.secondary input:hover, .button-group.secondary .button:focus, .button-group.secondary newtodo addtask input:focus, newtodo addtask .button-group.secondary input:focus {
+    .button-group.secondary .button:hover, .button-group.secondary .button:focus {
       background-color: #5f5f5f;
       color: #fefefe; }
-  .button-group.success .button, .button-group.success newtodo addtask input, newtodo addtask .button-group.success input {
+  .button-group.success .button {
     background-color: #3adb76;
     color: #fefefe; }
-    .button-group.success .button:hover, .button-group.success newtodo addtask input:hover, newtodo addtask .button-group.success input:hover, .button-group.success .button:focus, .button-group.success newtodo addtask input:focus, newtodo addtask .button-group.success input:focus {
+    .button-group.success .button:hover, .button-group.success .button:focus {
       background-color: #22bb5b;
       color: #fefefe; }
-  .button-group.warning .button, .button-group.warning newtodo addtask input, newtodo addtask .button-group.warning input {
+  .button-group.warning .button {
     background-color: #ffae00;
     color: #fefefe; }
-    .button-group.warning .button:hover, .button-group.warning newtodo addtask input:hover, newtodo addtask .button-group.warning input:hover, .button-group.warning .button:focus, .button-group.warning newtodo addtask input:focus, newtodo addtask .button-group.warning input:focus {
+    .button-group.warning .button:hover, .button-group.warning .button:focus {
       background-color: #cc8b00;
       color: #fefefe; }
-  .button-group.alert .button, .button-group.alert newtodo addtask input, newtodo addtask .button-group.alert input {
+  .button-group.alert .button {
     background-color: #ec5840;
     color: #fefefe; }
-    .button-group.alert .button:hover, .button-group.alert newtodo addtask input:hover, newtodo addtask .button-group.alert input:hover, .button-group.alert .button:focus, .button-group.alert newtodo addtask input:focus, newtodo addtask .button-group.alert input:focus {
+    .button-group.alert .button:hover, .button-group.alert .button:focus {
       background-color: #da3116;
       color: #fefefe; }
   .button-group.stacked, .button-group.stacked-for-small, .button-group.stacked-for-medium {
     flex-wrap: wrap; }
-    .button-group.stacked .button, .button-group.stacked newtodo addtask input, newtodo addtask .button-group.stacked input, .button-group.stacked-for-small .button, .button-group.stacked-for-small newtodo addtask input, newtodo addtask .button-group.stacked-for-small input, .button-group.stacked-for-medium .button, .button-group.stacked-for-medium newtodo addtask input, newtodo addtask .button-group.stacked-for-medium input {
+    .button-group.stacked .button, .button-group.stacked-for-small .button, .button-group.stacked-for-medium .button {
       flex: 0 0 100%; }
-      .button-group.stacked .button:last-child, .button-group.stacked newtodo addtask input:last-child, newtodo addtask .button-group.stacked input:last-child, .button-group.stacked-for-small .button:last-child, .button-group.stacked-for-small newtodo addtask input:last-child, newtodo addtask .button-group.stacked-for-small input:last-child, .button-group.stacked-for-medium .button:last-child, .button-group.stacked-for-medium newtodo addtask input:last-child, newtodo addtask .button-group.stacked-for-medium input:last-child {
+      .button-group.stacked .button:last-child, .button-group.stacked-for-small .button:last-child, .button-group.stacked-for-medium .button:last-child {
         margin-bottom: 0; }
   @media screen and (min-width: 40em) {
-    .button-group.stacked-for-small .button, .button-group.stacked-for-small newtodo addtask input, newtodo addtask .button-group.stacked-for-small input {
+    .button-group.stacked-for-small .button {
       flex: 1 1 0px;
       margin-bottom: 0; } }
   @media screen and (min-width: 64em) {
-    .button-group.stacked-for-medium .button, .button-group.stacked-for-medium newtodo addtask input, newtodo addtask .button-group.stacked-for-medium input {
+    .button-group.stacked-for-medium .button {
       flex: 1 1 0px;
       margin-bottom: 0; } }
   @media screen and (max-width: 39.9375em) {
     .button-group.stacked-for-small.expanded {
       display: block; }
-      .button-group.stacked-for-small.expanded .button, .button-group.stacked-for-small.expanded newtodo addtask input, newtodo addtask .button-group.stacked-for-small.expanded input {
+      .button-group.stacked-for-small.expanded .button {
         display: block;
         margin-right: 0; } }
 
@@ -2775,7 +2776,7 @@ html.is-reveal-open body {
       left: auto;
       right: auto;
       margin: 0 auto; } }
-  .reveal.collapse {
+  .reveal.collapse, newtodo.reveal {
     padding: 0; }
   @media screen and (min-width: 40em) {
     .reveal.tiny {
@@ -3167,7 +3168,7 @@ table.hover tr:nth-of-type(even):hover {
   .top-bar .input-group-field {
     width: 100%;
     margin-right: 0; }
-  .top-bar input.button, .top-bar newtodo addtask input, newtodo addtask .top-bar input {
+  .top-bar input.button {
     width: auto; }
   .top-bar .top-bar-left,
   .top-bar .top-bar-right {
@@ -3502,7 +3503,7 @@ table.hover tr:nth-of-type(even):hover {
         margin-right: -0.9375rem; } }
   .row.expanded, newtodo.expanded {
     max-width: none; }
-  .row.collapse > .column, newtodo.collapse > .column, .row.collapse > .columns, newtodo.collapse > .columns, newtodo .row.collapse > inputtask, newtodo.collapse > inputtask, newtodo .row.collapse > addtask, newtodo.collapse > addtask {
+  .row.collapse > .column, newtodo > .column, .row.collapse > .columns, newtodo > .columns, newtodo .row.collapse > inputtask, newtodo > inputtask, newtodo .row.collapse > addtask, newtodo > addtask {
     padding-left: 0;
     padding-right: 0; }
 
@@ -3546,7 +3547,7 @@ table.hover tr:nth-of-type(even):hover {
 .small-offset-2 {
   margin-left: 16.66667%; }
 
-.small-4 {
+.small-4, newtodo addtask {
   flex: 0 0 33.33333%;
   max-width: 33.33333%; }
 
@@ -3602,7 +3603,7 @@ table.hover tr:nth-of-type(even):hover {
 .small-offset-10 {
   margin-left: 83.33333%; }
 
-.small-12 {
+.small-12, newtodo inputtask {
   flex: 0 0 100%;
   max-width: 100%; }
 
@@ -3861,7 +3862,7 @@ table.hover tr:nth-of-type(even):hover {
     flex: 0 0 16.66667%;
     max-width: 16.66667%; }
 
-  .large-offset-1, newtodo inputtask {
+  .large-offset-1 {
     margin-left: 8.33333%; }
 
   .large-3 {
@@ -3871,7 +3872,7 @@ table.hover tr:nth-of-type(even):hover {
   .large-offset-2 {
     margin-left: 16.66667%; }
 
-  .large-4, newtodo addtask {
+  .large-4 {
     flex: 0 0 33.33333%;
     max-width: 33.33333%; }
 
@@ -3885,7 +3886,7 @@ table.hover tr:nth-of-type(even):hover {
   .large-offset-4 {
     margin-left: 33.33333%; }
 
-  .large-6, newtodo inputtask {
+  .large-6 {
     flex: 0 0 50%;
     max-width: 50%; }
 
@@ -4035,14 +4036,21 @@ table.hover tr:nth-of-type(even):hover {
   margin: 0;
   padding: 0; }
 
-body {
-  background-color: green; }
-
 newtodo {
-  background-color: red; }
-  newtodo inputtask {
-    background-color: blue; }
-  newtodo addtask {
-    background-color: yellow; }
+  margin-top: 2em; }
+  newtodo inputtask textarea {
+    border-color: #FFFFFF !important;
+    box-shadow: none !important;
+    font-family: 'Shadows Into Light', cursive !important;
+    font-size: 1.5em !important;
+    resize: none; }
+  newtodo addtask input {
+    width: 100%;
+    background-color: #FFFFFF;
+    border: 1px solid #F42041;
+    color: #F42041;
+    font-family: 'Shadows Into Light', cursive !important;
+    font-size: 1.5em !important;
+    font-weight: bold; }
 
 /*# sourceMappingURL=stylesheet.css.map */
