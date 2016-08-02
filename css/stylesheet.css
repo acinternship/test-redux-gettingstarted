@@ -429,53 +429,53 @@ button {
 .is-hidden {
   display: none !important; }
 
-.row, newtodo {
+.row, newtodocontainer, todoitemcontainer, todoitemcontainer taskbox div {
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   flex-flow: row wrap; }
-  .row .row, newtodo .row, .row newtodo, newtodo newtodo {
+  .row .row, newtodocontainer .row, todoitemcontainer .row, todoitemcontainer taskbox div .row, .row newtodocontainer, newtodocontainer newtodocontainer, todoitemcontainer newtodocontainer, todoitemcontainer taskbox div newtodocontainer, .row todoitemcontainer, newtodocontainer todoitemcontainer, todoitemcontainer todoitemcontainer, todoitemcontainer taskbox div todoitemcontainer, .row todoitemcontainer taskbox div, todoitemcontainer taskbox .row div, todoitemcontainer taskbox div {
     max-width: none;
     margin-left: -0.625rem;
     margin-right: -0.625rem; }
     @media screen and (min-width: 40em) {
-      .row .row, newtodo .row, .row newtodo, newtodo newtodo {
+      .row .row, newtodocontainer .row, todoitemcontainer .row, todoitemcontainer taskbox div .row, .row newtodocontainer, newtodocontainer newtodocontainer, todoitemcontainer newtodocontainer, todoitemcontainer taskbox div newtodocontainer, .row todoitemcontainer, newtodocontainer todoitemcontainer, todoitemcontainer todoitemcontainer, todoitemcontainer taskbox div todoitemcontainer, .row todoitemcontainer taskbox div, todoitemcontainer taskbox .row div, todoitemcontainer taskbox div {
         margin-left: -0.9375rem;
         margin-right: -0.9375rem; } }
-  .row.expanded, newtodo.expanded {
+  .row.expanded, newtodocontainer.expanded, todoitemcontainer.expanded, todoitemcontainer taskbox div.expanded {
     max-width: none; }
-  .row.collapse > .column, newtodo > .column, .row.collapse > .columns, newtodo > .columns, newtodo .row.collapse > inputtask, newtodo > inputtask, newtodo .row.collapse > addtask, newtodo > addtask {
+  .row.collapse > .column, newtodocontainer.collapse > .column, todoitemcontainer.collapse > .column, todoitemcontainer taskbox div.collapse > .column, .row.collapse > .columns, newtodocontainer.collapse > .columns, todoitemcontainer.collapse > .columns, todoitemcontainer taskbox div.collapse > .columns, newtodocontainer .row.collapse > inputtask, newtodocontainer.collapse > inputtask, newtodocontainer todoitemcontainer.collapse > inputtask, todoitemcontainer taskbox newtodocontainer div.collapse > inputtask, newtodocontainer todoitemcontainer taskbox div.collapse > inputtask, newtodocontainer .row.collapse > addtask, newtodocontainer.collapse > addtask, newtodocontainer todoitemcontainer.collapse > addtask, todoitemcontainer taskbox newtodocontainer div.collapse > addtask, newtodocontainer todoitemcontainer taskbox div.collapse > addtask, todoitemcontainer .row.collapse > tasktoggle, todoitemcontainer newtodocontainer.collapse > tasktoggle, todoitemcontainer.collapse > tasktoggle, todoitemcontainer taskbox div.collapse > tasktoggle, todoitemcontainer .row.collapse > taskbox, todoitemcontainer newtodocontainer.collapse > taskbox, todoitemcontainer.collapse > taskbox, todoitemcontainer taskbox div.collapse > taskbox {
     padding-left: 0;
     padding-right: 0; }
 
-.column, .columns, newtodo inputtask, newtodo addtask {
+.column, .columns, newtodocontainer inputtask, newtodocontainer addtask, todoitemcontainer tasktoggle, todoitemcontainer taskbox {
   flex: 1 1 0px;
   padding-left: 0.625rem;
   padding-right: 0.625rem;
   min-width: initial; }
   @media screen and (min-width: 40em) {
-    .column, .columns, newtodo inputtask, newtodo addtask {
+    .column, .columns, newtodocontainer inputtask, newtodocontainer addtask, todoitemcontainer tasktoggle, todoitemcontainer taskbox {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
 
-.column.row.row, .row.row.columns, newtodo.columns, newtodo inputtask.row.row, newtodo addtask.row.row, newtodo.column {
+.column.row.row, .row.row.columns, newtodocontainer.columns, newtodocontainer inputtask.row.row, newtodocontainer addtask.row.row, todoitemcontainer.columns, todoitemcontainer tasktoggle.row.row, todoitemcontainer taskbox.row.row, todoitemcontainer taskbox div.columns, newtodocontainer.column, todoitemcontainer.column, todoitemcontainer taskbox div.column {
   float: none;
   display: block; }
-  .row .column.row.row, newtodo .column.row.row, .row .row.row.columns, newtodo .row.row.columns, .row newtodo.columns, newtodo newtodo.columns, .row newtodo inputtask.row.row, newtodo .row inputtask.row.row, newtodo inputtask.row.row, .row newtodo addtask.row.row, newtodo .row addtask.row.row, newtodo addtask.row.row, .row newtodo.column, newtodo newtodo.column {
+  .row .column.row.row, newtodocontainer .column.row.row, todoitemcontainer .column.row.row, todoitemcontainer taskbox div .column.row.row, .row .row.row.columns, newtodocontainer .row.row.columns, todoitemcontainer .row.row.columns, .row newtodocontainer.columns, newtodocontainer newtodocontainer.columns, todoitemcontainer newtodocontainer.columns, .row newtodocontainer inputtask.row.row, newtodocontainer .row inputtask.row.row, newtodocontainer inputtask.row.row, .row newtodocontainer addtask.row.row, newtodocontainer .row addtask.row.row, newtodocontainer addtask.row.row, .row todoitemcontainer.columns, newtodocontainer todoitemcontainer.columns, todoitemcontainer todoitemcontainer.columns, .row todoitemcontainer tasktoggle.row.row, todoitemcontainer .row tasktoggle.row.row, todoitemcontainer tasktoggle.row.row, .row todoitemcontainer taskbox.row.row, todoitemcontainer .row taskbox.row.row, todoitemcontainer taskbox.row.row, .row todoitemcontainer taskbox div.columns, todoitemcontainer taskbox .row div.columns, todoitemcontainer taskbox div.columns, .row newtodocontainer.column, newtodocontainer newtodocontainer.column, todoitemcontainer newtodocontainer.column, .row todoitemcontainer.column, newtodocontainer todoitemcontainer.column, todoitemcontainer todoitemcontainer.column, .row todoitemcontainer taskbox div.column, todoitemcontainer taskbox .row div.column, todoitemcontainer taskbox div.column {
     padding-left: 0;
     padding-right: 0;
     margin-left: 0;
     margin-right: 0; }
 
-.small-1 {
+.small-1, todoitemcontainer tasktoggle {
   flex: 0 0 8.33333%;
   max-width: 8.33333%; }
 
 .small-offset-0 {
   margin-left: 0%; }
 
-.small-2 {
+.small-2, todoitemcontainer taskbox div taskoptions {
   flex: 0 0 16.66667%;
   max-width: 16.66667%; }
 
@@ -489,7 +489,7 @@ button {
 .small-offset-2 {
   margin-left: 16.66667%; }
 
-.small-4, newtodo addtask {
+.small-4, newtodocontainer addtask {
   flex: 0 0 33.33333%;
   max-width: 33.33333%; }
 
@@ -538,14 +538,14 @@ button {
 .small-offset-9 {
   margin-left: 75%; }
 
-.small-11 {
+.small-11, todoitemcontainer taskbox {
   flex: 0 0 91.66667%;
   max-width: 91.66667%; }
 
 .small-offset-10 {
   margin-left: 83.33333%; }
 
-.small-12, newtodo inputtask {
+.small-12, newtodocontainer inputtask, todoitemcontainer taskbox div tasktext {
   flex: 0 0 100%;
   max-width: 100%; }
 
@@ -572,57 +572,57 @@ button {
 
 .small-up-1 {
   flex-wrap: wrap; }
-  .small-up-1 > .column, .small-up-1 > .columns, newtodo .small-up-1 > inputtask, newtodo .small-up-1 > addtask {
+  .small-up-1 > .column, .small-up-1 > .columns, newtodocontainer .small-up-1 > inputtask, newtodocontainer .small-up-1 > addtask, todoitemcontainer .small-up-1 > tasktoggle, todoitemcontainer .small-up-1 > taskbox {
     flex: 0 0 100%;
     max-width: 100%; }
 
 .small-up-2 {
   flex-wrap: wrap; }
-  .small-up-2 > .column, .small-up-2 > .columns, newtodo .small-up-2 > inputtask, newtodo .small-up-2 > addtask {
+  .small-up-2 > .column, .small-up-2 > .columns, newtodocontainer .small-up-2 > inputtask, newtodocontainer .small-up-2 > addtask, todoitemcontainer .small-up-2 > tasktoggle, todoitemcontainer .small-up-2 > taskbox {
     flex: 0 0 50%;
     max-width: 50%; }
 
 .small-up-3 {
   flex-wrap: wrap; }
-  .small-up-3 > .column, .small-up-3 > .columns, newtodo .small-up-3 > inputtask, newtodo .small-up-3 > addtask {
+  .small-up-3 > .column, .small-up-3 > .columns, newtodocontainer .small-up-3 > inputtask, newtodocontainer .small-up-3 > addtask, todoitemcontainer .small-up-3 > tasktoggle, todoitemcontainer .small-up-3 > taskbox {
     flex: 0 0 33.33333%;
     max-width: 33.33333%; }
 
 .small-up-4 {
   flex-wrap: wrap; }
-  .small-up-4 > .column, .small-up-4 > .columns, newtodo .small-up-4 > inputtask, newtodo .small-up-4 > addtask {
+  .small-up-4 > .column, .small-up-4 > .columns, newtodocontainer .small-up-4 > inputtask, newtodocontainer .small-up-4 > addtask, todoitemcontainer .small-up-4 > tasktoggle, todoitemcontainer .small-up-4 > taskbox {
     flex: 0 0 25%;
     max-width: 25%; }
 
 .small-up-5 {
   flex-wrap: wrap; }
-  .small-up-5 > .column, .small-up-5 > .columns, newtodo .small-up-5 > inputtask, newtodo .small-up-5 > addtask {
+  .small-up-5 > .column, .small-up-5 > .columns, newtodocontainer .small-up-5 > inputtask, newtodocontainer .small-up-5 > addtask, todoitemcontainer .small-up-5 > tasktoggle, todoitemcontainer .small-up-5 > taskbox {
     flex: 0 0 20%;
     max-width: 20%; }
 
 .small-up-6 {
   flex-wrap: wrap; }
-  .small-up-6 > .column, .small-up-6 > .columns, newtodo .small-up-6 > inputtask, newtodo .small-up-6 > addtask {
+  .small-up-6 > .column, .small-up-6 > .columns, newtodocontainer .small-up-6 > inputtask, newtodocontainer .small-up-6 > addtask, todoitemcontainer .small-up-6 > tasktoggle, todoitemcontainer .small-up-6 > taskbox {
     flex: 0 0 16.66667%;
     max-width: 16.66667%; }
 
 .small-up-7 {
   flex-wrap: wrap; }
-  .small-up-7 > .column, .small-up-7 > .columns, newtodo .small-up-7 > inputtask, newtodo .small-up-7 > addtask {
+  .small-up-7 > .column, .small-up-7 > .columns, newtodocontainer .small-up-7 > inputtask, newtodocontainer .small-up-7 > addtask, todoitemcontainer .small-up-7 > tasktoggle, todoitemcontainer .small-up-7 > taskbox {
     flex: 0 0 14.28571%;
     max-width: 14.28571%; }
 
 .small-up-8 {
   flex-wrap: wrap; }
-  .small-up-8 > .column, .small-up-8 > .columns, newtodo .small-up-8 > inputtask, newtodo .small-up-8 > addtask {
+  .small-up-8 > .column, .small-up-8 > .columns, newtodocontainer .small-up-8 > inputtask, newtodocontainer .small-up-8 > addtask, todoitemcontainer .small-up-8 > tasktoggle, todoitemcontainer .small-up-8 > taskbox {
     flex: 0 0 12.5%;
     max-width: 12.5%; }
 
-.small-collapse > .column, .small-collapse > .columns, newtodo .small-collapse > inputtask, newtodo .small-collapse > addtask {
+.small-collapse > .column, .small-collapse > .columns, newtodocontainer .small-collapse > inputtask, newtodocontainer .small-collapse > addtask, todoitemcontainer .small-collapse > tasktoggle, todoitemcontainer .small-collapse > taskbox {
   padding-left: 0;
   padding-right: 0; }
 
-.small-uncollapse > .column, .small-uncollapse > .columns, newtodo .small-uncollapse > inputtask, newtodo .small-uncollapse > addtask {
+.small-uncollapse > .column, .small-uncollapse > .columns, newtodocontainer .small-uncollapse > inputtask, newtodocontainer .small-uncollapse > addtask, todoitemcontainer .small-uncollapse > tasktoggle, todoitemcontainer .small-uncollapse > taskbox {
   padding-left: 0.625rem;
   padding-right: 0.625rem; }
 
@@ -731,76 +731,76 @@ button {
 
   .medium-up-1 {
     flex-wrap: wrap; }
-    .medium-up-1 > .column, .medium-up-1 > .columns, newtodo .medium-up-1 > inputtask, newtodo .medium-up-1 > addtask {
+    .medium-up-1 > .column, .medium-up-1 > .columns, newtodocontainer .medium-up-1 > inputtask, newtodocontainer .medium-up-1 > addtask, todoitemcontainer .medium-up-1 > tasktoggle, todoitemcontainer .medium-up-1 > taskbox {
       flex: 0 0 100%;
       max-width: 100%; }
 
   .medium-up-2 {
     flex-wrap: wrap; }
-    .medium-up-2 > .column, .medium-up-2 > .columns, newtodo .medium-up-2 > inputtask, newtodo .medium-up-2 > addtask {
+    .medium-up-2 > .column, .medium-up-2 > .columns, newtodocontainer .medium-up-2 > inputtask, newtodocontainer .medium-up-2 > addtask, todoitemcontainer .medium-up-2 > tasktoggle, todoitemcontainer .medium-up-2 > taskbox {
       flex: 0 0 50%;
       max-width: 50%; }
 
   .medium-up-3 {
     flex-wrap: wrap; }
-    .medium-up-3 > .column, .medium-up-3 > .columns, newtodo .medium-up-3 > inputtask, newtodo .medium-up-3 > addtask {
+    .medium-up-3 > .column, .medium-up-3 > .columns, newtodocontainer .medium-up-3 > inputtask, newtodocontainer .medium-up-3 > addtask, todoitemcontainer .medium-up-3 > tasktoggle, todoitemcontainer .medium-up-3 > taskbox {
       flex: 0 0 33.33333%;
       max-width: 33.33333%; }
 
   .medium-up-4 {
     flex-wrap: wrap; }
-    .medium-up-4 > .column, .medium-up-4 > .columns, newtodo .medium-up-4 > inputtask, newtodo .medium-up-4 > addtask {
+    .medium-up-4 > .column, .medium-up-4 > .columns, newtodocontainer .medium-up-4 > inputtask, newtodocontainer .medium-up-4 > addtask, todoitemcontainer .medium-up-4 > tasktoggle, todoitemcontainer .medium-up-4 > taskbox {
       flex: 0 0 25%;
       max-width: 25%; }
 
   .medium-up-5 {
     flex-wrap: wrap; }
-    .medium-up-5 > .column, .medium-up-5 > .columns, newtodo .medium-up-5 > inputtask, newtodo .medium-up-5 > addtask {
+    .medium-up-5 > .column, .medium-up-5 > .columns, newtodocontainer .medium-up-5 > inputtask, newtodocontainer .medium-up-5 > addtask, todoitemcontainer .medium-up-5 > tasktoggle, todoitemcontainer .medium-up-5 > taskbox {
       flex: 0 0 20%;
       max-width: 20%; }
 
   .medium-up-6 {
     flex-wrap: wrap; }
-    .medium-up-6 > .column, .medium-up-6 > .columns, newtodo .medium-up-6 > inputtask, newtodo .medium-up-6 > addtask {
+    .medium-up-6 > .column, .medium-up-6 > .columns, newtodocontainer .medium-up-6 > inputtask, newtodocontainer .medium-up-6 > addtask, todoitemcontainer .medium-up-6 > tasktoggle, todoitemcontainer .medium-up-6 > taskbox {
       flex: 0 0 16.66667%;
       max-width: 16.66667%; }
 
   .medium-up-7 {
     flex-wrap: wrap; }
-    .medium-up-7 > .column, .medium-up-7 > .columns, newtodo .medium-up-7 > inputtask, newtodo .medium-up-7 > addtask {
+    .medium-up-7 > .column, .medium-up-7 > .columns, newtodocontainer .medium-up-7 > inputtask, newtodocontainer .medium-up-7 > addtask, todoitemcontainer .medium-up-7 > tasktoggle, todoitemcontainer .medium-up-7 > taskbox {
       flex: 0 0 14.28571%;
       max-width: 14.28571%; }
 
   .medium-up-8 {
     flex-wrap: wrap; }
-    .medium-up-8 > .column, .medium-up-8 > .columns, newtodo .medium-up-8 > inputtask, newtodo .medium-up-8 > addtask {
+    .medium-up-8 > .column, .medium-up-8 > .columns, newtodocontainer .medium-up-8 > inputtask, newtodocontainer .medium-up-8 > addtask, todoitemcontainer .medium-up-8 > tasktoggle, todoitemcontainer .medium-up-8 > taskbox {
       flex: 0 0 12.5%;
       max-width: 12.5%; } }
 @media screen and (min-width: 40em) and (min-width: 40em) {
   .medium-expand {
     flex: 1 1 0px; } }
-.row.medium-unstack > .column, newtodo.medium-unstack > .column, .row.medium-unstack > .columns, newtodo.medium-unstack > .columns, newtodo .row.medium-unstack > inputtask, newtodo.medium-unstack > inputtask, newtodo .row.medium-unstack > addtask, newtodo.medium-unstack > addtask {
+.row.medium-unstack > .column, newtodocontainer.medium-unstack > .column, todoitemcontainer.medium-unstack > .column, todoitemcontainer taskbox div.medium-unstack > .column, .row.medium-unstack > .columns, newtodocontainer.medium-unstack > .columns, todoitemcontainer.medium-unstack > .columns, todoitemcontainer taskbox div.medium-unstack > .columns, newtodocontainer .row.medium-unstack > inputtask, newtodocontainer.medium-unstack > inputtask, newtodocontainer todoitemcontainer.medium-unstack > inputtask, todoitemcontainer taskbox newtodocontainer div.medium-unstack > inputtask, newtodocontainer todoitemcontainer taskbox div.medium-unstack > inputtask, newtodocontainer .row.medium-unstack > addtask, newtodocontainer.medium-unstack > addtask, newtodocontainer todoitemcontainer.medium-unstack > addtask, todoitemcontainer taskbox newtodocontainer div.medium-unstack > addtask, newtodocontainer todoitemcontainer taskbox div.medium-unstack > addtask, todoitemcontainer .row.medium-unstack > tasktoggle, todoitemcontainer newtodocontainer.medium-unstack > tasktoggle, todoitemcontainer.medium-unstack > tasktoggle, todoitemcontainer taskbox div.medium-unstack > tasktoggle, todoitemcontainer .row.medium-unstack > taskbox, todoitemcontainer newtodocontainer.medium-unstack > taskbox, todoitemcontainer.medium-unstack > taskbox, todoitemcontainer taskbox div.medium-unstack > taskbox {
   flex: 0 0 100%; }
   @media screen and (min-width: 40em) {
-    .row.medium-unstack > .column, newtodo.medium-unstack > .column, .row.medium-unstack > .columns, newtodo.medium-unstack > .columns, newtodo .row.medium-unstack > inputtask, newtodo.medium-unstack > inputtask, newtodo .row.medium-unstack > addtask, newtodo.medium-unstack > addtask {
+    .row.medium-unstack > .column, newtodocontainer.medium-unstack > .column, todoitemcontainer.medium-unstack > .column, todoitemcontainer taskbox div.medium-unstack > .column, .row.medium-unstack > .columns, newtodocontainer.medium-unstack > .columns, todoitemcontainer.medium-unstack > .columns, todoitemcontainer taskbox div.medium-unstack > .columns, newtodocontainer .row.medium-unstack > inputtask, newtodocontainer.medium-unstack > inputtask, newtodocontainer todoitemcontainer.medium-unstack > inputtask, todoitemcontainer taskbox newtodocontainer div.medium-unstack > inputtask, newtodocontainer todoitemcontainer taskbox div.medium-unstack > inputtask, newtodocontainer .row.medium-unstack > addtask, newtodocontainer.medium-unstack > addtask, newtodocontainer todoitemcontainer.medium-unstack > addtask, todoitemcontainer taskbox newtodocontainer div.medium-unstack > addtask, newtodocontainer todoitemcontainer taskbox div.medium-unstack > addtask, todoitemcontainer .row.medium-unstack > tasktoggle, todoitemcontainer newtodocontainer.medium-unstack > tasktoggle, todoitemcontainer.medium-unstack > tasktoggle, todoitemcontainer taskbox div.medium-unstack > tasktoggle, todoitemcontainer .row.medium-unstack > taskbox, todoitemcontainer newtodocontainer.medium-unstack > taskbox, todoitemcontainer.medium-unstack > taskbox, todoitemcontainer taskbox div.medium-unstack > taskbox {
       flex: 1 1 0px; } }
 @media screen and (min-width: 40em) {
-  .medium-collapse > .column, .medium-collapse > .columns, newtodo .medium-collapse > inputtask, newtodo .medium-collapse > addtask {
+  .medium-collapse > .column, .medium-collapse > .columns, newtodocontainer .medium-collapse > inputtask, newtodocontainer .medium-collapse > addtask, todoitemcontainer .medium-collapse > tasktoggle, todoitemcontainer .medium-collapse > taskbox {
     padding-left: 0;
     padding-right: 0; }
 
-  .medium-uncollapse > .column, .medium-uncollapse > .columns, newtodo .medium-uncollapse > inputtask, newtodo .medium-uncollapse > addtask {
+  .medium-uncollapse > .column, .medium-uncollapse > .columns, newtodocontainer .medium-uncollapse > inputtask, newtodocontainer .medium-uncollapse > addtask, todoitemcontainer .medium-uncollapse > tasktoggle, todoitemcontainer .medium-uncollapse > taskbox {
     padding-left: 0.9375rem;
     padding-right: 0.9375rem; } }
 @media screen and (min-width: 64em) {
-  .large-1 {
+  .large-1, todoitemcontainer tasktoggle {
     flex: 0 0 8.33333%;
     max-width: 8.33333%; }
 
   .large-offset-0 {
     margin-left: 0%; }
 
-  .large-2 {
+  .large-2, newtodocontainer addtask, todoitemcontainer taskbox div taskoptions {
     flex: 0 0 16.66667%;
     max-width: 16.66667%; }
 
@@ -828,14 +828,14 @@ button {
   .large-offset-4 {
     margin-left: 33.33333%; }
 
-  .large-6 {
+  .large-6, newtodocontainer inputtask {
     flex: 0 0 50%;
     max-width: 50%; }
 
   .large-offset-5 {
     margin-left: 41.66667%; }
 
-  .large-7 {
+  .large-7, todoitemcontainer taskbox {
     flex: 0 0 58.33333%;
     max-width: 58.33333%; }
 
@@ -856,7 +856,7 @@ button {
   .large-offset-8 {
     margin-left: 66.66667%; }
 
-  .large-10 {
+  .large-10, todoitemcontainer taskbox div tasktext {
     flex: 0 0 83.33333%;
     max-width: 83.33333%; }
 
@@ -897,81 +897,81 @@ button {
 
   .large-up-1 {
     flex-wrap: wrap; }
-    .large-up-1 > .column, .large-up-1 > .columns, newtodo .large-up-1 > inputtask, newtodo .large-up-1 > addtask {
+    .large-up-1 > .column, .large-up-1 > .columns, newtodocontainer .large-up-1 > inputtask, newtodocontainer .large-up-1 > addtask, todoitemcontainer .large-up-1 > tasktoggle, todoitemcontainer .large-up-1 > taskbox {
       flex: 0 0 100%;
       max-width: 100%; }
 
   .large-up-2 {
     flex-wrap: wrap; }
-    .large-up-2 > .column, .large-up-2 > .columns, newtodo .large-up-2 > inputtask, newtodo .large-up-2 > addtask {
+    .large-up-2 > .column, .large-up-2 > .columns, newtodocontainer .large-up-2 > inputtask, newtodocontainer .large-up-2 > addtask, todoitemcontainer .large-up-2 > tasktoggle, todoitemcontainer .large-up-2 > taskbox {
       flex: 0 0 50%;
       max-width: 50%; }
 
   .large-up-3 {
     flex-wrap: wrap; }
-    .large-up-3 > .column, .large-up-3 > .columns, newtodo .large-up-3 > inputtask, newtodo .large-up-3 > addtask {
+    .large-up-3 > .column, .large-up-3 > .columns, newtodocontainer .large-up-3 > inputtask, newtodocontainer .large-up-3 > addtask, todoitemcontainer .large-up-3 > tasktoggle, todoitemcontainer .large-up-3 > taskbox {
       flex: 0 0 33.33333%;
       max-width: 33.33333%; }
 
   .large-up-4 {
     flex-wrap: wrap; }
-    .large-up-4 > .column, .large-up-4 > .columns, newtodo .large-up-4 > inputtask, newtodo .large-up-4 > addtask {
+    .large-up-4 > .column, .large-up-4 > .columns, newtodocontainer .large-up-4 > inputtask, newtodocontainer .large-up-4 > addtask, todoitemcontainer .large-up-4 > tasktoggle, todoitemcontainer .large-up-4 > taskbox {
       flex: 0 0 25%;
       max-width: 25%; }
 
   .large-up-5 {
     flex-wrap: wrap; }
-    .large-up-5 > .column, .large-up-5 > .columns, newtodo .large-up-5 > inputtask, newtodo .large-up-5 > addtask {
+    .large-up-5 > .column, .large-up-5 > .columns, newtodocontainer .large-up-5 > inputtask, newtodocontainer .large-up-5 > addtask, todoitemcontainer .large-up-5 > tasktoggle, todoitemcontainer .large-up-5 > taskbox {
       flex: 0 0 20%;
       max-width: 20%; }
 
   .large-up-6 {
     flex-wrap: wrap; }
-    .large-up-6 > .column, .large-up-6 > .columns, newtodo .large-up-6 > inputtask, newtodo .large-up-6 > addtask {
+    .large-up-6 > .column, .large-up-6 > .columns, newtodocontainer .large-up-6 > inputtask, newtodocontainer .large-up-6 > addtask, todoitemcontainer .large-up-6 > tasktoggle, todoitemcontainer .large-up-6 > taskbox {
       flex: 0 0 16.66667%;
       max-width: 16.66667%; }
 
   .large-up-7 {
     flex-wrap: wrap; }
-    .large-up-7 > .column, .large-up-7 > .columns, newtodo .large-up-7 > inputtask, newtodo .large-up-7 > addtask {
+    .large-up-7 > .column, .large-up-7 > .columns, newtodocontainer .large-up-7 > inputtask, newtodocontainer .large-up-7 > addtask, todoitemcontainer .large-up-7 > tasktoggle, todoitemcontainer .large-up-7 > taskbox {
       flex: 0 0 14.28571%;
       max-width: 14.28571%; }
 
   .large-up-8 {
     flex-wrap: wrap; }
-    .large-up-8 > .column, .large-up-8 > .columns, newtodo .large-up-8 > inputtask, newtodo .large-up-8 > addtask {
+    .large-up-8 > .column, .large-up-8 > .columns, newtodocontainer .large-up-8 > inputtask, newtodocontainer .large-up-8 > addtask, todoitemcontainer .large-up-8 > tasktoggle, todoitemcontainer .large-up-8 > taskbox {
       flex: 0 0 12.5%;
       max-width: 12.5%; } }
 @media screen and (min-width: 64em) and (min-width: 64em) {
   .large-expand {
     flex: 1 1 0px; } }
-.row.large-unstack > .column, newtodo.large-unstack > .column, .row.large-unstack > .columns, newtodo.large-unstack > .columns, newtodo .row.large-unstack > inputtask, newtodo.large-unstack > inputtask, newtodo .row.large-unstack > addtask, newtodo.large-unstack > addtask {
+.row.large-unstack > .column, newtodocontainer.large-unstack > .column, todoitemcontainer.large-unstack > .column, todoitemcontainer taskbox div.large-unstack > .column, .row.large-unstack > .columns, newtodocontainer.large-unstack > .columns, todoitemcontainer.large-unstack > .columns, todoitemcontainer taskbox div.large-unstack > .columns, newtodocontainer .row.large-unstack > inputtask, newtodocontainer.large-unstack > inputtask, newtodocontainer todoitemcontainer.large-unstack > inputtask, todoitemcontainer taskbox newtodocontainer div.large-unstack > inputtask, newtodocontainer todoitemcontainer taskbox div.large-unstack > inputtask, newtodocontainer .row.large-unstack > addtask, newtodocontainer.large-unstack > addtask, newtodocontainer todoitemcontainer.large-unstack > addtask, todoitemcontainer taskbox newtodocontainer div.large-unstack > addtask, newtodocontainer todoitemcontainer taskbox div.large-unstack > addtask, todoitemcontainer .row.large-unstack > tasktoggle, todoitemcontainer newtodocontainer.large-unstack > tasktoggle, todoitemcontainer.large-unstack > tasktoggle, todoitemcontainer taskbox div.large-unstack > tasktoggle, todoitemcontainer .row.large-unstack > taskbox, todoitemcontainer newtodocontainer.large-unstack > taskbox, todoitemcontainer.large-unstack > taskbox, todoitemcontainer taskbox div.large-unstack > taskbox {
   flex: 0 0 100%; }
   @media screen and (min-width: 64em) {
-    .row.large-unstack > .column, newtodo.large-unstack > .column, .row.large-unstack > .columns, newtodo.large-unstack > .columns, newtodo .row.large-unstack > inputtask, newtodo.large-unstack > inputtask, newtodo .row.large-unstack > addtask, newtodo.large-unstack > addtask {
+    .row.large-unstack > .column, newtodocontainer.large-unstack > .column, todoitemcontainer.large-unstack > .column, todoitemcontainer taskbox div.large-unstack > .column, .row.large-unstack > .columns, newtodocontainer.large-unstack > .columns, todoitemcontainer.large-unstack > .columns, todoitemcontainer taskbox div.large-unstack > .columns, newtodocontainer .row.large-unstack > inputtask, newtodocontainer.large-unstack > inputtask, newtodocontainer todoitemcontainer.large-unstack > inputtask, todoitemcontainer taskbox newtodocontainer div.large-unstack > inputtask, newtodocontainer todoitemcontainer taskbox div.large-unstack > inputtask, newtodocontainer .row.large-unstack > addtask, newtodocontainer.large-unstack > addtask, newtodocontainer todoitemcontainer.large-unstack > addtask, todoitemcontainer taskbox newtodocontainer div.large-unstack > addtask, newtodocontainer todoitemcontainer taskbox div.large-unstack > addtask, todoitemcontainer .row.large-unstack > tasktoggle, todoitemcontainer newtodocontainer.large-unstack > tasktoggle, todoitemcontainer.large-unstack > tasktoggle, todoitemcontainer taskbox div.large-unstack > tasktoggle, todoitemcontainer .row.large-unstack > taskbox, todoitemcontainer newtodocontainer.large-unstack > taskbox, todoitemcontainer.large-unstack > taskbox, todoitemcontainer taskbox div.large-unstack > taskbox {
       flex: 1 1 0px; } }
 @media screen and (min-width: 64em) {
-  .large-collapse > .column, .large-collapse > .columns, newtodo .large-collapse > inputtask, newtodo .large-collapse > addtask {
+  .large-collapse > .column, .large-collapse > .columns, newtodocontainer .large-collapse > inputtask, newtodocontainer .large-collapse > addtask, todoitemcontainer .large-collapse > tasktoggle, todoitemcontainer .large-collapse > taskbox {
     padding-left: 0;
     padding-right: 0; }
 
-  .large-uncollapse > .column, .large-uncollapse > .columns, newtodo .large-uncollapse > inputtask, newtodo .large-uncollapse > addtask {
+  .large-uncollapse > .column, .large-uncollapse > .columns, newtodocontainer .large-uncollapse > inputtask, newtodocontainer .large-uncollapse > addtask, todoitemcontainer .large-uncollapse > tasktoggle, todoitemcontainer .large-uncollapse > taskbox {
     padding-left: 0.9375rem;
     padding-right: 0.9375rem; } }
 .shrink {
   flex: 0 0 auto;
   max-width: 100%; }
 
-.column.align-top, .align-top.columns, newtodo inputtask.align-top, newtodo addtask.align-top {
+.column.align-top, .align-top.columns, newtodocontainer inputtask.align-top, newtodocontainer addtask.align-top, todoitemcontainer tasktoggle.align-top, todoitemcontainer taskbox.align-top {
   align-self: flex-start; }
 
-.column.align-bottom, .align-bottom.columns, newtodo inputtask.align-bottom, newtodo addtask.align-bottom {
+.column.align-bottom, .align-bottom.columns, newtodocontainer inputtask.align-bottom, newtodocontainer addtask.align-bottom, todoitemcontainer tasktoggle.align-bottom, todoitemcontainer taskbox.align-bottom {
   align-self: flex-end; }
 
-.column.align-middle, .align-middle.columns, newtodo inputtask.align-middle, newtodo addtask.align-middle {
+.column.align-middle, .align-middle.columns, newtodocontainer inputtask.align-middle, newtodocontainer addtask.align-middle, todoitemcontainer tasktoggle.align-middle, todoitemcontainer taskbox.align-middle {
   align-self: center; }
 
-.column.align-stretch, .align-stretch.columns, newtodo inputtask.align-stretch, newtodo addtask.align-stretch {
+.column.align-stretch, .align-stretch.columns, newtodocontainer inputtask.align-stretch, newtodocontainer addtask.align-stretch, todoitemcontainer tasktoggle.align-stretch, todoitemcontainer taskbox.align-stretch {
   align-self: stretch; }
 
 div,
@@ -2758,12 +2758,16 @@ html.is-reveal-open body {
   @media screen and (min-width: 40em) {
     .reveal {
       min-height: 0; } }
-  .reveal .column, .reveal .columns, .reveal newtodo inputtask, newtodo .reveal inputtask, .reveal newtodo addtask, newtodo .reveal addtask,
+  .reveal .column, .reveal .columns, .reveal newtodocontainer inputtask, newtodocontainer .reveal inputtask, .reveal newtodocontainer addtask, newtodocontainer .reveal addtask, .reveal todoitemcontainer tasktoggle, todoitemcontainer .reveal tasktoggle, .reveal todoitemcontainer taskbox, todoitemcontainer .reveal taskbox,
   .reveal .columns,
-  .reveal newtodo inputtask,
-  newtodo .reveal inputtask,
-  .reveal newtodo addtask,
-  newtodo .reveal addtask {
+  .reveal newtodocontainer inputtask,
+  newtodocontainer .reveal inputtask,
+  .reveal newtodocontainer addtask,
+  newtodocontainer .reveal addtask,
+  .reveal todoitemcontainer tasktoggle,
+  todoitemcontainer .reveal tasktoggle,
+  .reveal todoitemcontainer taskbox,
+  todoitemcontainer .reveal taskbox {
     min-width: 0; }
   .reveal > :last-child {
     margin-bottom: 0; }
@@ -2776,7 +2780,7 @@ html.is-reveal-open body {
       left: auto;
       right: auto;
       margin: 0 auto; } }
-  .reveal.collapse, newtodo.reveal {
+  .reveal.collapse {
     padding: 0; }
   @media screen and (min-width: 40em) {
     .reveal.tiny {
@@ -3310,7 +3314,7 @@ table.hover tr:nth-of-type(even):hover {
 .align-right {
   justify-content: flex-end; }
 
-.align-center, newtodo {
+.align-center, newtodocontainer, todoitemcontainer {
   justify-content: center; }
 
 .align-justify {
@@ -3334,7 +3338,7 @@ table.hover tr:nth-of-type(even):hover {
 .align-middle {
   align-items: center; }
 
-.align-self-middle {
+.align-self-middle, newtodocontainer addtask, todoitemcontainer tasktoggle {
   align-self: center; }
 
 .align-stretch {
@@ -3400,7 +3404,7 @@ table.hover tr:nth-of-type(even):hover {
 .align-right {
   justify-content: flex-end; }
 
-.align-center, newtodo {
+.align-center, newtodocontainer, todoitemcontainer {
   justify-content: center; }
 
 .align-justify {
@@ -3424,7 +3428,7 @@ table.hover tr:nth-of-type(even):hover {
 .align-middle {
   align-items: center; }
 
-.align-self-middle {
+.align-self-middle, newtodocontainer addtask, todoitemcontainer tasktoggle {
   align-self: center; }
 
 .align-stretch {
@@ -3487,53 +3491,53 @@ table.hover tr:nth-of-type(even):hover {
 
   .large-order-6 {
     order: 6; } }
-.row, newtodo {
+.row, newtodocontainer, todoitemcontainer, todoitemcontainer taskbox div {
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   flex-flow: row wrap; }
-  .row .row, newtodo .row, .row newtodo, newtodo newtodo {
+  .row .row, newtodocontainer .row, todoitemcontainer .row, todoitemcontainer taskbox div .row, .row newtodocontainer, newtodocontainer newtodocontainer, todoitemcontainer newtodocontainer, todoitemcontainer taskbox div newtodocontainer, .row todoitemcontainer, newtodocontainer todoitemcontainer, todoitemcontainer todoitemcontainer, todoitemcontainer taskbox div todoitemcontainer, .row todoitemcontainer taskbox div, todoitemcontainer taskbox .row div, todoitemcontainer taskbox div {
     max-width: none;
     margin-left: -0.625rem;
     margin-right: -0.625rem; }
     @media screen and (min-width: 40em) {
-      .row .row, newtodo .row, .row newtodo, newtodo newtodo {
+      .row .row, newtodocontainer .row, todoitemcontainer .row, todoitemcontainer taskbox div .row, .row newtodocontainer, newtodocontainer newtodocontainer, todoitemcontainer newtodocontainer, todoitemcontainer taskbox div newtodocontainer, .row todoitemcontainer, newtodocontainer todoitemcontainer, todoitemcontainer todoitemcontainer, todoitemcontainer taskbox div todoitemcontainer, .row todoitemcontainer taskbox div, todoitemcontainer taskbox .row div, todoitemcontainer taskbox div {
         margin-left: -0.9375rem;
         margin-right: -0.9375rem; } }
-  .row.expanded, newtodo.expanded {
+  .row.expanded, newtodocontainer.expanded, todoitemcontainer.expanded, todoitemcontainer taskbox div.expanded {
     max-width: none; }
-  .row.collapse > .column, newtodo > .column, .row.collapse > .columns, newtodo > .columns, newtodo .row.collapse > inputtask, newtodo > inputtask, newtodo .row.collapse > addtask, newtodo > addtask {
+  .row.collapse > .column, newtodocontainer.collapse > .column, todoitemcontainer.collapse > .column, todoitemcontainer taskbox div.collapse > .column, .row.collapse > .columns, newtodocontainer.collapse > .columns, todoitemcontainer.collapse > .columns, todoitemcontainer taskbox div.collapse > .columns, newtodocontainer .row.collapse > inputtask, newtodocontainer.collapse > inputtask, newtodocontainer todoitemcontainer.collapse > inputtask, todoitemcontainer taskbox newtodocontainer div.collapse > inputtask, newtodocontainer todoitemcontainer taskbox div.collapse > inputtask, newtodocontainer .row.collapse > addtask, newtodocontainer.collapse > addtask, newtodocontainer todoitemcontainer.collapse > addtask, todoitemcontainer taskbox newtodocontainer div.collapse > addtask, newtodocontainer todoitemcontainer taskbox div.collapse > addtask, todoitemcontainer .row.collapse > tasktoggle, todoitemcontainer newtodocontainer.collapse > tasktoggle, todoitemcontainer.collapse > tasktoggle, todoitemcontainer taskbox div.collapse > tasktoggle, todoitemcontainer .row.collapse > taskbox, todoitemcontainer newtodocontainer.collapse > taskbox, todoitemcontainer.collapse > taskbox, todoitemcontainer taskbox div.collapse > taskbox {
     padding-left: 0;
     padding-right: 0; }
 
-.column, .columns, newtodo inputtask, newtodo addtask {
+.column, .columns, newtodocontainer inputtask, newtodocontainer addtask, todoitemcontainer tasktoggle, todoitemcontainer taskbox {
   flex: 1 1 0px;
   padding-left: 0.625rem;
   padding-right: 0.625rem;
   min-width: initial; }
   @media screen and (min-width: 40em) {
-    .column, .columns, newtodo inputtask, newtodo addtask {
+    .column, .columns, newtodocontainer inputtask, newtodocontainer addtask, todoitemcontainer tasktoggle, todoitemcontainer taskbox {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
 
-.column.row.row, .row.row.columns, newtodo.columns, newtodo inputtask.row.row, newtodo addtask.row.row, newtodo.column {
+.column.row.row, .row.row.columns, newtodocontainer.columns, newtodocontainer inputtask.row.row, newtodocontainer addtask.row.row, todoitemcontainer.columns, todoitemcontainer tasktoggle.row.row, todoitemcontainer taskbox.row.row, todoitemcontainer taskbox div.columns, newtodocontainer.column, todoitemcontainer.column, todoitemcontainer taskbox div.column {
   float: none;
   display: block; }
-  .row .column.row.row, newtodo .column.row.row, .row .row.row.columns, newtodo .row.row.columns, .row newtodo.columns, newtodo newtodo.columns, .row newtodo inputtask.row.row, newtodo .row inputtask.row.row, newtodo inputtask.row.row, .row newtodo addtask.row.row, newtodo .row addtask.row.row, newtodo addtask.row.row, .row newtodo.column, newtodo newtodo.column {
+  .row .column.row.row, newtodocontainer .column.row.row, todoitemcontainer .column.row.row, todoitemcontainer taskbox div .column.row.row, .row .row.row.columns, newtodocontainer .row.row.columns, todoitemcontainer .row.row.columns, .row newtodocontainer.columns, newtodocontainer newtodocontainer.columns, todoitemcontainer newtodocontainer.columns, .row newtodocontainer inputtask.row.row, newtodocontainer .row inputtask.row.row, newtodocontainer inputtask.row.row, .row newtodocontainer addtask.row.row, newtodocontainer .row addtask.row.row, newtodocontainer addtask.row.row, .row todoitemcontainer.columns, newtodocontainer todoitemcontainer.columns, todoitemcontainer todoitemcontainer.columns, .row todoitemcontainer tasktoggle.row.row, todoitemcontainer .row tasktoggle.row.row, todoitemcontainer tasktoggle.row.row, .row todoitemcontainer taskbox.row.row, todoitemcontainer .row taskbox.row.row, todoitemcontainer taskbox.row.row, .row todoitemcontainer taskbox div.columns, todoitemcontainer taskbox .row div.columns, todoitemcontainer taskbox div.columns, .row newtodocontainer.column, newtodocontainer newtodocontainer.column, todoitemcontainer newtodocontainer.column, .row todoitemcontainer.column, newtodocontainer todoitemcontainer.column, todoitemcontainer todoitemcontainer.column, .row todoitemcontainer taskbox div.column, todoitemcontainer taskbox .row div.column, todoitemcontainer taskbox div.column {
     padding-left: 0;
     padding-right: 0;
     margin-left: 0;
     margin-right: 0; }
 
-.small-1 {
+.small-1, todoitemcontainer tasktoggle {
   flex: 0 0 8.33333%;
   max-width: 8.33333%; }
 
 .small-offset-0 {
   margin-left: 0%; }
 
-.small-2 {
+.small-2, todoitemcontainer taskbox div taskoptions {
   flex: 0 0 16.66667%;
   max-width: 16.66667%; }
 
@@ -3547,7 +3551,7 @@ table.hover tr:nth-of-type(even):hover {
 .small-offset-2 {
   margin-left: 16.66667%; }
 
-.small-4, newtodo addtask {
+.small-4, newtodocontainer addtask {
   flex: 0 0 33.33333%;
   max-width: 33.33333%; }
 
@@ -3596,14 +3600,14 @@ table.hover tr:nth-of-type(even):hover {
 .small-offset-9 {
   margin-left: 75%; }
 
-.small-11 {
+.small-11, todoitemcontainer taskbox {
   flex: 0 0 91.66667%;
   max-width: 91.66667%; }
 
 .small-offset-10 {
   margin-left: 83.33333%; }
 
-.small-12, newtodo inputtask {
+.small-12, newtodocontainer inputtask, todoitemcontainer taskbox div tasktext {
   flex: 0 0 100%;
   max-width: 100%; }
 
@@ -3630,57 +3634,57 @@ table.hover tr:nth-of-type(even):hover {
 
 .small-up-1 {
   flex-wrap: wrap; }
-  .small-up-1 > .column, .small-up-1 > .columns, newtodo .small-up-1 > inputtask, newtodo .small-up-1 > addtask {
+  .small-up-1 > .column, .small-up-1 > .columns, newtodocontainer .small-up-1 > inputtask, newtodocontainer .small-up-1 > addtask, todoitemcontainer .small-up-1 > tasktoggle, todoitemcontainer .small-up-1 > taskbox {
     flex: 0 0 100%;
     max-width: 100%; }
 
 .small-up-2 {
   flex-wrap: wrap; }
-  .small-up-2 > .column, .small-up-2 > .columns, newtodo .small-up-2 > inputtask, newtodo .small-up-2 > addtask {
+  .small-up-2 > .column, .small-up-2 > .columns, newtodocontainer .small-up-2 > inputtask, newtodocontainer .small-up-2 > addtask, todoitemcontainer .small-up-2 > tasktoggle, todoitemcontainer .small-up-2 > taskbox {
     flex: 0 0 50%;
     max-width: 50%; }
 
 .small-up-3 {
   flex-wrap: wrap; }
-  .small-up-3 > .column, .small-up-3 > .columns, newtodo .small-up-3 > inputtask, newtodo .small-up-3 > addtask {
+  .small-up-3 > .column, .small-up-3 > .columns, newtodocontainer .small-up-3 > inputtask, newtodocontainer .small-up-3 > addtask, todoitemcontainer .small-up-3 > tasktoggle, todoitemcontainer .small-up-3 > taskbox {
     flex: 0 0 33.33333%;
     max-width: 33.33333%; }
 
 .small-up-4 {
   flex-wrap: wrap; }
-  .small-up-4 > .column, .small-up-4 > .columns, newtodo .small-up-4 > inputtask, newtodo .small-up-4 > addtask {
+  .small-up-4 > .column, .small-up-4 > .columns, newtodocontainer .small-up-4 > inputtask, newtodocontainer .small-up-4 > addtask, todoitemcontainer .small-up-4 > tasktoggle, todoitemcontainer .small-up-4 > taskbox {
     flex: 0 0 25%;
     max-width: 25%; }
 
 .small-up-5 {
   flex-wrap: wrap; }
-  .small-up-5 > .column, .small-up-5 > .columns, newtodo .small-up-5 > inputtask, newtodo .small-up-5 > addtask {
+  .small-up-5 > .column, .small-up-5 > .columns, newtodocontainer .small-up-5 > inputtask, newtodocontainer .small-up-5 > addtask, todoitemcontainer .small-up-5 > tasktoggle, todoitemcontainer .small-up-5 > taskbox {
     flex: 0 0 20%;
     max-width: 20%; }
 
 .small-up-6 {
   flex-wrap: wrap; }
-  .small-up-6 > .column, .small-up-6 > .columns, newtodo .small-up-6 > inputtask, newtodo .small-up-6 > addtask {
+  .small-up-6 > .column, .small-up-6 > .columns, newtodocontainer .small-up-6 > inputtask, newtodocontainer .small-up-6 > addtask, todoitemcontainer .small-up-6 > tasktoggle, todoitemcontainer .small-up-6 > taskbox {
     flex: 0 0 16.66667%;
     max-width: 16.66667%; }
 
 .small-up-7 {
   flex-wrap: wrap; }
-  .small-up-7 > .column, .small-up-7 > .columns, newtodo .small-up-7 > inputtask, newtodo .small-up-7 > addtask {
+  .small-up-7 > .column, .small-up-7 > .columns, newtodocontainer .small-up-7 > inputtask, newtodocontainer .small-up-7 > addtask, todoitemcontainer .small-up-7 > tasktoggle, todoitemcontainer .small-up-7 > taskbox {
     flex: 0 0 14.28571%;
     max-width: 14.28571%; }
 
 .small-up-8 {
   flex-wrap: wrap; }
-  .small-up-8 > .column, .small-up-8 > .columns, newtodo .small-up-8 > inputtask, newtodo .small-up-8 > addtask {
+  .small-up-8 > .column, .small-up-8 > .columns, newtodocontainer .small-up-8 > inputtask, newtodocontainer .small-up-8 > addtask, todoitemcontainer .small-up-8 > tasktoggle, todoitemcontainer .small-up-8 > taskbox {
     flex: 0 0 12.5%;
     max-width: 12.5%; }
 
-.small-collapse > .column, .small-collapse > .columns, newtodo .small-collapse > inputtask, newtodo .small-collapse > addtask {
+.small-collapse > .column, .small-collapse > .columns, newtodocontainer .small-collapse > inputtask, newtodocontainer .small-collapse > addtask, todoitemcontainer .small-collapse > tasktoggle, todoitemcontainer .small-collapse > taskbox {
   padding-left: 0;
   padding-right: 0; }
 
-.small-uncollapse > .column, .small-uncollapse > .columns, newtodo .small-uncollapse > inputtask, newtodo .small-uncollapse > addtask {
+.small-uncollapse > .column, .small-uncollapse > .columns, newtodocontainer .small-uncollapse > inputtask, newtodocontainer .small-uncollapse > addtask, todoitemcontainer .small-uncollapse > tasktoggle, todoitemcontainer .small-uncollapse > taskbox {
   padding-left: 0.625rem;
   padding-right: 0.625rem; }
 
@@ -3789,76 +3793,76 @@ table.hover tr:nth-of-type(even):hover {
 
   .medium-up-1 {
     flex-wrap: wrap; }
-    .medium-up-1 > .column, .medium-up-1 > .columns, newtodo .medium-up-1 > inputtask, newtodo .medium-up-1 > addtask {
+    .medium-up-1 > .column, .medium-up-1 > .columns, newtodocontainer .medium-up-1 > inputtask, newtodocontainer .medium-up-1 > addtask, todoitemcontainer .medium-up-1 > tasktoggle, todoitemcontainer .medium-up-1 > taskbox {
       flex: 0 0 100%;
       max-width: 100%; }
 
   .medium-up-2 {
     flex-wrap: wrap; }
-    .medium-up-2 > .column, .medium-up-2 > .columns, newtodo .medium-up-2 > inputtask, newtodo .medium-up-2 > addtask {
+    .medium-up-2 > .column, .medium-up-2 > .columns, newtodocontainer .medium-up-2 > inputtask, newtodocontainer .medium-up-2 > addtask, todoitemcontainer .medium-up-2 > tasktoggle, todoitemcontainer .medium-up-2 > taskbox {
       flex: 0 0 50%;
       max-width: 50%; }
 
   .medium-up-3 {
     flex-wrap: wrap; }
-    .medium-up-3 > .column, .medium-up-3 > .columns, newtodo .medium-up-3 > inputtask, newtodo .medium-up-3 > addtask {
+    .medium-up-3 > .column, .medium-up-3 > .columns, newtodocontainer .medium-up-3 > inputtask, newtodocontainer .medium-up-3 > addtask, todoitemcontainer .medium-up-3 > tasktoggle, todoitemcontainer .medium-up-3 > taskbox {
       flex: 0 0 33.33333%;
       max-width: 33.33333%; }
 
   .medium-up-4 {
     flex-wrap: wrap; }
-    .medium-up-4 > .column, .medium-up-4 > .columns, newtodo .medium-up-4 > inputtask, newtodo .medium-up-4 > addtask {
+    .medium-up-4 > .column, .medium-up-4 > .columns, newtodocontainer .medium-up-4 > inputtask, newtodocontainer .medium-up-4 > addtask, todoitemcontainer .medium-up-4 > tasktoggle, todoitemcontainer .medium-up-4 > taskbox {
       flex: 0 0 25%;
       max-width: 25%; }
 
   .medium-up-5 {
     flex-wrap: wrap; }
-    .medium-up-5 > .column, .medium-up-5 > .columns, newtodo .medium-up-5 > inputtask, newtodo .medium-up-5 > addtask {
+    .medium-up-5 > .column, .medium-up-5 > .columns, newtodocontainer .medium-up-5 > inputtask, newtodocontainer .medium-up-5 > addtask, todoitemcontainer .medium-up-5 > tasktoggle, todoitemcontainer .medium-up-5 > taskbox {
       flex: 0 0 20%;
       max-width: 20%; }
 
   .medium-up-6 {
     flex-wrap: wrap; }
-    .medium-up-6 > .column, .medium-up-6 > .columns, newtodo .medium-up-6 > inputtask, newtodo .medium-up-6 > addtask {
+    .medium-up-6 > .column, .medium-up-6 > .columns, newtodocontainer .medium-up-6 > inputtask, newtodocontainer .medium-up-6 > addtask, todoitemcontainer .medium-up-6 > tasktoggle, todoitemcontainer .medium-up-6 > taskbox {
       flex: 0 0 16.66667%;
       max-width: 16.66667%; }
 
   .medium-up-7 {
     flex-wrap: wrap; }
-    .medium-up-7 > .column, .medium-up-7 > .columns, newtodo .medium-up-7 > inputtask, newtodo .medium-up-7 > addtask {
+    .medium-up-7 > .column, .medium-up-7 > .columns, newtodocontainer .medium-up-7 > inputtask, newtodocontainer .medium-up-7 > addtask, todoitemcontainer .medium-up-7 > tasktoggle, todoitemcontainer .medium-up-7 > taskbox {
       flex: 0 0 14.28571%;
       max-width: 14.28571%; }
 
   .medium-up-8 {
     flex-wrap: wrap; }
-    .medium-up-8 > .column, .medium-up-8 > .columns, newtodo .medium-up-8 > inputtask, newtodo .medium-up-8 > addtask {
+    .medium-up-8 > .column, .medium-up-8 > .columns, newtodocontainer .medium-up-8 > inputtask, newtodocontainer .medium-up-8 > addtask, todoitemcontainer .medium-up-8 > tasktoggle, todoitemcontainer .medium-up-8 > taskbox {
       flex: 0 0 12.5%;
       max-width: 12.5%; } }
 @media screen and (min-width: 40em) and (min-width: 40em) {
   .medium-expand {
     flex: 1 1 0px; } }
-.row.medium-unstack > .column, newtodo.medium-unstack > .column, .row.medium-unstack > .columns, newtodo.medium-unstack > .columns, newtodo .row.medium-unstack > inputtask, newtodo.medium-unstack > inputtask, newtodo .row.medium-unstack > addtask, newtodo.medium-unstack > addtask {
+.row.medium-unstack > .column, newtodocontainer.medium-unstack > .column, todoitemcontainer.medium-unstack > .column, todoitemcontainer taskbox div.medium-unstack > .column, .row.medium-unstack > .columns, newtodocontainer.medium-unstack > .columns, todoitemcontainer.medium-unstack > .columns, todoitemcontainer taskbox div.medium-unstack > .columns, newtodocontainer .row.medium-unstack > inputtask, newtodocontainer.medium-unstack > inputtask, newtodocontainer todoitemcontainer.medium-unstack > inputtask, todoitemcontainer taskbox newtodocontainer div.medium-unstack > inputtask, newtodocontainer todoitemcontainer taskbox div.medium-unstack > inputtask, newtodocontainer .row.medium-unstack > addtask, newtodocontainer.medium-unstack > addtask, newtodocontainer todoitemcontainer.medium-unstack > addtask, todoitemcontainer taskbox newtodocontainer div.medium-unstack > addtask, newtodocontainer todoitemcontainer taskbox div.medium-unstack > addtask, todoitemcontainer .row.medium-unstack > tasktoggle, todoitemcontainer newtodocontainer.medium-unstack > tasktoggle, todoitemcontainer.medium-unstack > tasktoggle, todoitemcontainer taskbox div.medium-unstack > tasktoggle, todoitemcontainer .row.medium-unstack > taskbox, todoitemcontainer newtodocontainer.medium-unstack > taskbox, todoitemcontainer.medium-unstack > taskbox, todoitemcontainer taskbox div.medium-unstack > taskbox {
   flex: 0 0 100%; }
   @media screen and (min-width: 40em) {
-    .row.medium-unstack > .column, newtodo.medium-unstack > .column, .row.medium-unstack > .columns, newtodo.medium-unstack > .columns, newtodo .row.medium-unstack > inputtask, newtodo.medium-unstack > inputtask, newtodo .row.medium-unstack > addtask, newtodo.medium-unstack > addtask {
+    .row.medium-unstack > .column, newtodocontainer.medium-unstack > .column, todoitemcontainer.medium-unstack > .column, todoitemcontainer taskbox div.medium-unstack > .column, .row.medium-unstack > .columns, newtodocontainer.medium-unstack > .columns, todoitemcontainer.medium-unstack > .columns, todoitemcontainer taskbox div.medium-unstack > .columns, newtodocontainer .row.medium-unstack > inputtask, newtodocontainer.medium-unstack > inputtask, newtodocontainer todoitemcontainer.medium-unstack > inputtask, todoitemcontainer taskbox newtodocontainer div.medium-unstack > inputtask, newtodocontainer todoitemcontainer taskbox div.medium-unstack > inputtask, newtodocontainer .row.medium-unstack > addtask, newtodocontainer.medium-unstack > addtask, newtodocontainer todoitemcontainer.medium-unstack > addtask, todoitemcontainer taskbox newtodocontainer div.medium-unstack > addtask, newtodocontainer todoitemcontainer taskbox div.medium-unstack > addtask, todoitemcontainer .row.medium-unstack > tasktoggle, todoitemcontainer newtodocontainer.medium-unstack > tasktoggle, todoitemcontainer.medium-unstack > tasktoggle, todoitemcontainer taskbox div.medium-unstack > tasktoggle, todoitemcontainer .row.medium-unstack > taskbox, todoitemcontainer newtodocontainer.medium-unstack > taskbox, todoitemcontainer.medium-unstack > taskbox, todoitemcontainer taskbox div.medium-unstack > taskbox {
       flex: 1 1 0px; } }
 @media screen and (min-width: 40em) {
-  .medium-collapse > .column, .medium-collapse > .columns, newtodo .medium-collapse > inputtask, newtodo .medium-collapse > addtask {
+  .medium-collapse > .column, .medium-collapse > .columns, newtodocontainer .medium-collapse > inputtask, newtodocontainer .medium-collapse > addtask, todoitemcontainer .medium-collapse > tasktoggle, todoitemcontainer .medium-collapse > taskbox {
     padding-left: 0;
     padding-right: 0; }
 
-  .medium-uncollapse > .column, .medium-uncollapse > .columns, newtodo .medium-uncollapse > inputtask, newtodo .medium-uncollapse > addtask {
+  .medium-uncollapse > .column, .medium-uncollapse > .columns, newtodocontainer .medium-uncollapse > inputtask, newtodocontainer .medium-uncollapse > addtask, todoitemcontainer .medium-uncollapse > tasktoggle, todoitemcontainer .medium-uncollapse > taskbox {
     padding-left: 0.9375rem;
     padding-right: 0.9375rem; } }
 @media screen and (min-width: 64em) {
-  .large-1 {
+  .large-1, todoitemcontainer tasktoggle {
     flex: 0 0 8.33333%;
     max-width: 8.33333%; }
 
   .large-offset-0 {
     margin-left: 0%; }
 
-  .large-2 {
+  .large-2, newtodocontainer addtask, todoitemcontainer taskbox div taskoptions {
     flex: 0 0 16.66667%;
     max-width: 16.66667%; }
 
@@ -3886,14 +3890,14 @@ table.hover tr:nth-of-type(even):hover {
   .large-offset-4 {
     margin-left: 33.33333%; }
 
-  .large-6 {
+  .large-6, newtodocontainer inputtask {
     flex: 0 0 50%;
     max-width: 50%; }
 
   .large-offset-5 {
     margin-left: 41.66667%; }
 
-  .large-7 {
+  .large-7, todoitemcontainer taskbox {
     flex: 0 0 58.33333%;
     max-width: 58.33333%; }
 
@@ -3914,7 +3918,7 @@ table.hover tr:nth-of-type(even):hover {
   .large-offset-8 {
     margin-left: 66.66667%; }
 
-  .large-10 {
+  .large-10, todoitemcontainer taskbox div tasktext {
     flex: 0 0 83.33333%;
     max-width: 83.33333%; }
 
@@ -3955,102 +3959,133 @@ table.hover tr:nth-of-type(even):hover {
 
   .large-up-1 {
     flex-wrap: wrap; }
-    .large-up-1 > .column, .large-up-1 > .columns, newtodo .large-up-1 > inputtask, newtodo .large-up-1 > addtask {
+    .large-up-1 > .column, .large-up-1 > .columns, newtodocontainer .large-up-1 > inputtask, newtodocontainer .large-up-1 > addtask, todoitemcontainer .large-up-1 > tasktoggle, todoitemcontainer .large-up-1 > taskbox {
       flex: 0 0 100%;
       max-width: 100%; }
 
   .large-up-2 {
     flex-wrap: wrap; }
-    .large-up-2 > .column, .large-up-2 > .columns, newtodo .large-up-2 > inputtask, newtodo .large-up-2 > addtask {
+    .large-up-2 > .column, .large-up-2 > .columns, newtodocontainer .large-up-2 > inputtask, newtodocontainer .large-up-2 > addtask, todoitemcontainer .large-up-2 > tasktoggle, todoitemcontainer .large-up-2 > taskbox {
       flex: 0 0 50%;
       max-width: 50%; }
 
   .large-up-3 {
     flex-wrap: wrap; }
-    .large-up-3 > .column, .large-up-3 > .columns, newtodo .large-up-3 > inputtask, newtodo .large-up-3 > addtask {
+    .large-up-3 > .column, .large-up-3 > .columns, newtodocontainer .large-up-3 > inputtask, newtodocontainer .large-up-3 > addtask, todoitemcontainer .large-up-3 > tasktoggle, todoitemcontainer .large-up-3 > taskbox {
       flex: 0 0 33.33333%;
       max-width: 33.33333%; }
 
   .large-up-4 {
     flex-wrap: wrap; }
-    .large-up-4 > .column, .large-up-4 > .columns, newtodo .large-up-4 > inputtask, newtodo .large-up-4 > addtask {
+    .large-up-4 > .column, .large-up-4 > .columns, newtodocontainer .large-up-4 > inputtask, newtodocontainer .large-up-4 > addtask, todoitemcontainer .large-up-4 > tasktoggle, todoitemcontainer .large-up-4 > taskbox {
       flex: 0 0 25%;
       max-width: 25%; }
 
   .large-up-5 {
     flex-wrap: wrap; }
-    .large-up-5 > .column, .large-up-5 > .columns, newtodo .large-up-5 > inputtask, newtodo .large-up-5 > addtask {
+    .large-up-5 > .column, .large-up-5 > .columns, newtodocontainer .large-up-5 > inputtask, newtodocontainer .large-up-5 > addtask, todoitemcontainer .large-up-5 > tasktoggle, todoitemcontainer .large-up-5 > taskbox {
       flex: 0 0 20%;
       max-width: 20%; }
 
   .large-up-6 {
     flex-wrap: wrap; }
-    .large-up-6 > .column, .large-up-6 > .columns, newtodo .large-up-6 > inputtask, newtodo .large-up-6 > addtask {
+    .large-up-6 > .column, .large-up-6 > .columns, newtodocontainer .large-up-6 > inputtask, newtodocontainer .large-up-6 > addtask, todoitemcontainer .large-up-6 > tasktoggle, todoitemcontainer .large-up-6 > taskbox {
       flex: 0 0 16.66667%;
       max-width: 16.66667%; }
 
   .large-up-7 {
     flex-wrap: wrap; }
-    .large-up-7 > .column, .large-up-7 > .columns, newtodo .large-up-7 > inputtask, newtodo .large-up-7 > addtask {
+    .large-up-7 > .column, .large-up-7 > .columns, newtodocontainer .large-up-7 > inputtask, newtodocontainer .large-up-7 > addtask, todoitemcontainer .large-up-7 > tasktoggle, todoitemcontainer .large-up-7 > taskbox {
       flex: 0 0 14.28571%;
       max-width: 14.28571%; }
 
   .large-up-8 {
     flex-wrap: wrap; }
-    .large-up-8 > .column, .large-up-8 > .columns, newtodo .large-up-8 > inputtask, newtodo .large-up-8 > addtask {
+    .large-up-8 > .column, .large-up-8 > .columns, newtodocontainer .large-up-8 > inputtask, newtodocontainer .large-up-8 > addtask, todoitemcontainer .large-up-8 > tasktoggle, todoitemcontainer .large-up-8 > taskbox {
       flex: 0 0 12.5%;
       max-width: 12.5%; } }
 @media screen and (min-width: 64em) and (min-width: 64em) {
   .large-expand {
     flex: 1 1 0px; } }
-.row.large-unstack > .column, newtodo.large-unstack > .column, .row.large-unstack > .columns, newtodo.large-unstack > .columns, newtodo .row.large-unstack > inputtask, newtodo.large-unstack > inputtask, newtodo .row.large-unstack > addtask, newtodo.large-unstack > addtask {
+.row.large-unstack > .column, newtodocontainer.large-unstack > .column, todoitemcontainer.large-unstack > .column, todoitemcontainer taskbox div.large-unstack > .column, .row.large-unstack > .columns, newtodocontainer.large-unstack > .columns, todoitemcontainer.large-unstack > .columns, todoitemcontainer taskbox div.large-unstack > .columns, newtodocontainer .row.large-unstack > inputtask, newtodocontainer.large-unstack > inputtask, newtodocontainer todoitemcontainer.large-unstack > inputtask, todoitemcontainer taskbox newtodocontainer div.large-unstack > inputtask, newtodocontainer todoitemcontainer taskbox div.large-unstack > inputtask, newtodocontainer .row.large-unstack > addtask, newtodocontainer.large-unstack > addtask, newtodocontainer todoitemcontainer.large-unstack > addtask, todoitemcontainer taskbox newtodocontainer div.large-unstack > addtask, newtodocontainer todoitemcontainer taskbox div.large-unstack > addtask, todoitemcontainer .row.large-unstack > tasktoggle, todoitemcontainer newtodocontainer.large-unstack > tasktoggle, todoitemcontainer.large-unstack > tasktoggle, todoitemcontainer taskbox div.large-unstack > tasktoggle, todoitemcontainer .row.large-unstack > taskbox, todoitemcontainer newtodocontainer.large-unstack > taskbox, todoitemcontainer.large-unstack > taskbox, todoitemcontainer taskbox div.large-unstack > taskbox {
   flex: 0 0 100%; }
   @media screen and (min-width: 64em) {
-    .row.large-unstack > .column, newtodo.large-unstack > .column, .row.large-unstack > .columns, newtodo.large-unstack > .columns, newtodo .row.large-unstack > inputtask, newtodo.large-unstack > inputtask, newtodo .row.large-unstack > addtask, newtodo.large-unstack > addtask {
+    .row.large-unstack > .column, newtodocontainer.large-unstack > .column, todoitemcontainer.large-unstack > .column, todoitemcontainer taskbox div.large-unstack > .column, .row.large-unstack > .columns, newtodocontainer.large-unstack > .columns, todoitemcontainer.large-unstack > .columns, todoitemcontainer taskbox div.large-unstack > .columns, newtodocontainer .row.large-unstack > inputtask, newtodocontainer.large-unstack > inputtask, newtodocontainer todoitemcontainer.large-unstack > inputtask, todoitemcontainer taskbox newtodocontainer div.large-unstack > inputtask, newtodocontainer todoitemcontainer taskbox div.large-unstack > inputtask, newtodocontainer .row.large-unstack > addtask, newtodocontainer.large-unstack > addtask, newtodocontainer todoitemcontainer.large-unstack > addtask, todoitemcontainer taskbox newtodocontainer div.large-unstack > addtask, newtodocontainer todoitemcontainer taskbox div.large-unstack > addtask, todoitemcontainer .row.large-unstack > tasktoggle, todoitemcontainer newtodocontainer.large-unstack > tasktoggle, todoitemcontainer.large-unstack > tasktoggle, todoitemcontainer taskbox div.large-unstack > tasktoggle, todoitemcontainer .row.large-unstack > taskbox, todoitemcontainer newtodocontainer.large-unstack > taskbox, todoitemcontainer.large-unstack > taskbox, todoitemcontainer taskbox div.large-unstack > taskbox {
       flex: 1 1 0px; } }
 @media screen and (min-width: 64em) {
-  .large-collapse > .column, .large-collapse > .columns, newtodo .large-collapse > inputtask, newtodo .large-collapse > addtask {
+  .large-collapse > .column, .large-collapse > .columns, newtodocontainer .large-collapse > inputtask, newtodocontainer .large-collapse > addtask, todoitemcontainer .large-collapse > tasktoggle, todoitemcontainer .large-collapse > taskbox {
     padding-left: 0;
     padding-right: 0; }
 
-  .large-uncollapse > .column, .large-uncollapse > .columns, newtodo .large-uncollapse > inputtask, newtodo .large-uncollapse > addtask {
+  .large-uncollapse > .column, .large-uncollapse > .columns, newtodocontainer .large-uncollapse > inputtask, newtodocontainer .large-uncollapse > addtask, todoitemcontainer .large-uncollapse > tasktoggle, todoitemcontainer .large-uncollapse > taskbox {
     padding-left: 0.9375rem;
     padding-right: 0.9375rem; } }
 .shrink {
   flex: 0 0 auto;
   max-width: 100%; }
 
-.column.align-top, .align-top.columns, newtodo inputtask.align-top, newtodo addtask.align-top {
+.column.align-top, .align-top.columns, newtodocontainer inputtask.align-top, newtodocontainer addtask.align-top, todoitemcontainer tasktoggle.align-top, todoitemcontainer taskbox.align-top {
   align-self: flex-start; }
 
-.column.align-bottom, .align-bottom.columns, newtodo inputtask.align-bottom, newtodo addtask.align-bottom {
+.column.align-bottom, .align-bottom.columns, newtodocontainer inputtask.align-bottom, newtodocontainer addtask.align-bottom, todoitemcontainer tasktoggle.align-bottom, todoitemcontainer taskbox.align-bottom {
   align-self: flex-end; }
 
-.column.align-middle, .align-middle.columns, newtodo inputtask.align-middle, newtodo addtask.align-middle {
+.column.align-middle, .align-middle.columns, newtodocontainer inputtask.align-middle, newtodocontainer addtask.align-middle, todoitemcontainer tasktoggle.align-middle, todoitemcontainer taskbox.align-middle {
   align-self: center; }
 
-.column.align-stretch, .align-stretch.columns, newtodo inputtask.align-stretch, newtodo addtask.align-stretch {
+.column.align-stretch, .align-stretch.columns, newtodocontainer inputtask.align-stretch, newtodocontainer addtask.align-stretch, todoitemcontainer tasktoggle.align-stretch, todoitemcontainer taskbox.align-stretch {
   align-self: stretch; }
 
 * {
   margin: 0;
   padding: 0; }
 
-newtodo {
-  margin-top: 2em; }
-  newtodo inputtask textarea {
+newtodocontainer {
+  margin-top: 2em;
+  background-color: blue; }
+  newtodocontainer inputtask Textarea {
     border-color: #FFFFFF !important;
     box-shadow: none !important;
     font-family: 'Shadows Into Light', cursive !important;
     font-size: 1.5em !important;
     resize: none; }
-  newtodo addtask input {
-    width: 100%;
-    background-color: #FFFFFF;
-    border: 1px solid #F42041;
-    color: #F42041;
-    font-family: 'Shadows Into Light', cursive !important;
-    font-size: 1.5em !important;
-    font-weight: bold; }
+  newtodocontainer addtask {
+    transition: all 500ms ease-in-out; }
+    newtodocontainer addtask input {
+      width: 100%;
+      background-color: #FFFFFF;
+      border: 1px solid #F42041 !important;
+      color: #F42041;
+      font-family: 'Shadows Into Light', cursive !important;
+      font-size: 1.25em !important;
+      font-weight: bold;
+      transition: all 250ms ease-in-out; }
+      newtodocontainer addtask input:focus {
+        outline: none; }
+      newtodocontainer addtask input:hover {
+        border: 1px solid #CD1B9C !important;
+        color: #CD1B9C; }
+
+todoitemcontainer {
+  margin: 1em 0;
+  background-color: red; }
+  todoitemcontainer tasktoggle {
+    background-color: yellow; }
+  todoitemcontainer taskbox {
+    background-color: green; }
+    todoitemcontainer taskbox div tasktext Textarea {
+      border-color: #FFFFFF !important;
+      box-shadow: none !important;
+      font-family: 'Shadows Into Light', cursive !important;
+      font-size: 1.5em !important;
+      resize: none; }
+    todoitemcontainer taskbox div taskoptions {
+      align-items: center;
+      display: flex;
+      justify-content: space-around;
+      background-color: yellow; }
+
+todolistcontainer {
+  justify-content: center; }
 
 /*# sourceMappingURL=stylesheet.css.map */

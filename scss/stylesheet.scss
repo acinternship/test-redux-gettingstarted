@@ -21,19 +21,17 @@ body {
 }
 
 // CUSTOM HTML ELEMENTS
-newtodo {
-  @extend .row, .collapse, .align-center;
+newtodocontainer {
+  @extend .row, .align-center;
   
   margin-top: 2em;
   
-//  background-color: red;
-  
+  background-color: blue;
+    
   inputtask {
-    @extend .small-12, .columns;
+    @extend .small-12, .large-6, .columns;
     
-//    background-color: blue;
-    
-    textarea {
+    Textarea {
       border-color: $background !important;
       box-shadow: none !important;
       font-family: 'Shadows Into Light', cursive !important;
@@ -43,24 +41,83 @@ newtodo {
   }
   
   addtask {
-    @extend .small-4, .columns;
+    @extend .small-4, .large-2, .columns, .align-self-middle;
     
-//    background-color: yellow;
+    transition: all 500ms ease-in-out;
     
     input {
-//      @extend .button;
       width: 100%;
       
       background-color: $background;
-      border: 1px solid #F42041;
+      border: 1px solid #F42041 !important;
       color: #F42041;
       font-family: 'Shadows Into Light', cursive !important;
-      font-size: 1.5em !important;
+      font-size: 1.25em !important;
       font-weight: bold;
+      transition: all 250ms ease-in-out;
+      
+      &:focus {
+        outline: none;
+      }
+      
+      &:hover {
+        border: 1px solid #CD1B9C !important;
+        color: #CD1B9C;
+      }
     }
   }
 }
 
-todoitemcontainer {}
+todoitemcontainer {
+  @extend .row, .align-center;
+  
+  margin: 1em 0;
+  
+  background-color: red;
+  
+  tasktoggle {
+    @extend .small-1, .large-1, .columns, .align-self-middle;
+    
+    background-color: yellow;
+  }
+  
+  taskbox {
+    @extend .small-11, .large-7, .columns;
+    
+    background-color: green;
+      
+    div {
+      @extend .row;
+      
+      tasktext {
+        @extend .small-12, .large-10;
+        
+        Textarea {
+          border-color: $background !important;
+          box-shadow: none !important;
+          font-family: 'Shadows Into Light', cursive !important;
+          font-size: 1.5em !important;
+          resize: none;
+        }
+      }
 
-todolistcontainer {}
+      taskoptions {
+        @extend .small-2, .large-2;
+        
+        align-items: center;
+        display: flex;
+        justify-content: space-around;
+
+        background-color: yellow;
+
+        taskedit {}
+
+        taskoptions {}
+      }
+    }
+  }
+}
+
+todolistcontainer {
+  justify-content: center;
+}

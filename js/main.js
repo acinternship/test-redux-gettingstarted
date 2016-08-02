@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import Textarea from 'react-textarea-autosize'
 import { createStore } from 'redux'
 
 /*** REDUX STORE ***/
@@ -87,20 +88,19 @@ class NewTodo extends React.Component {
   
   render() {
     return (
-      <newtodo>
+      <newtodocontainer>
         <inputtask>
-          <textarea placeholder="Type in your new task"
-                    rows="3"
+          <Textarea placeholder="Type in your new task"
                     type="text"
                     onChange={this.setText}
-                    ref="newtodotext"/>
+                    ref="newtodotext"></Textarea>
         </inputtask>
         <addtask>
           <input type="submit"
                  value="ADD TASK"
                  onClick={this.addTodo}/>
         </addtask>
-      </newtodo>
+      </newtodocontainer>
     )
   }
 }
@@ -145,17 +145,43 @@ class TodoItem extends React.Component {
   
   render() {
     return (
-      <tr>
-        <td>
-          <input type="checkbox" onClick={this.toggleTodo}></input>
-        </td>
-        <td>
-          <input defaultValue={this.props.data.text} onChange={this.editText}/>
-        </td>
-        <td onClick={this.editTodo}>e</td>
-        <td onClick={this.removeTodo}>x</td>
-      </tr>
+      <todoitemcontainer>
+        <tasktoggle>
+          <input type="checkbox"
+                 onClick={this.toggleTodo}/>
+        </tasktoggle>
+        
+        <taskbox>
+           <div>
+            <tasktext>
+              <Textarea defaultValue={this.props.data.text}
+                        onChange={this.editText}/>
+            </tasktext>
+
+            <taskoptions>
+              <taskedit onClick={this.editTodo}>
+                edit
+              </taskedit>
+              <taskdelete onClick={this.removeTodo}>
+                x
+              </taskdelete>
+            </taskoptions>
+          </div>
+        </taskbox>
+      </todoitemcontainer>
     )
+//    return (
+//      <tr>
+//        <td>
+//          <input type="checkbox" onClick={this.toggleTodo}></input>
+//        </td>
+//        <td>
+//          <input defaultValue={this.props.data.text} onChange={this.editText}/>
+//        </td>
+//        <td onClick={this.editTodo}>e</td>
+//        <td onClick={this.removeTodo}>x</td>
+//      </tr>
+//    )
   }
 }
 
@@ -167,21 +193,24 @@ class TodoList extends React.Component {
       item => <TodoItem key={item.id} data={item}/>
     )
     
-    return (
-      <table className="hover">
-        <thead>
-          <tr>
-            <th width="50"></th>
-            <th width="500"></th>
-            <th width="50"></th>
-            <th width="50"></th>
-          </tr>
-        </thead>
-        <tbody>
-          {todoitems}
-        </tbody>
-      </table>
-    )
+    return <todolistcontainer>{todoitems}</todolistcontainer>
+  
+//    return (
+//      <table className="hover">
+//        <thead>
+//          <tr>
+//            <th width="50"></th>
+//            <th width="500"></th>
+//            <th width="50"></th>
+//            <th width="50"></th>
+//          </tr>
+//        </thead>
+//        <tbody>
+//          {todoitems}
+//        </tbody>
+//      </table>
+//    )
+    
   }
 }
 
