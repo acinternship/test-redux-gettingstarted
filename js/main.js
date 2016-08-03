@@ -88,19 +88,19 @@ class NewTodo extends React.Component {
   
   render() {
     return (
-      <newtodocontainer>
-        <inputtask>
+      <div className="newtodocontainer">
+        <div className="inputtask">
           <Textarea placeholder="Type in your new task"
                     type="text"
                     onChange={this.setText}
                     ref="newtodotext"></Textarea>
-        </inputtask>
-        <addtask>
+        </div>
+        <div className="addtask">
           <input type="submit"
                  value="ADD TASK"
                  onClick={this.addTodo}/>
-        </addtask>
-      </newtodocontainer>
+        </div>
+      </div>
     )
   }
 }
@@ -146,28 +146,35 @@ class TodoItem extends React.Component {
   render() {
     return (
       <todoitemcontainer>
-        <tasktoggle>
-          <input type="checkbox"
-                 onClick={this.toggleTodo}/>
-        </tasktoggle>
-        
-        <taskbox>
-           <div>
-            <tasktext>
-              <Textarea defaultValue={this.props.data.text}
-                        onChange={this.editText}/>
-            </tasktext>
+        <todoitembox>
+          <div>
+           
+            <tasktoggle>
+              <input type="checkbox"
+                     onClick={this.toggleTodo}/>
+            </tasktoggle>
 
-            <taskoptions>
-              <taskedit onClick={this.editTodo}>
-                edit
-              </taskedit>
-              <taskdelete onClick={this.removeTodo}>
-                x
-              </taskdelete>
-            </taskoptions>
+            <taskbox>
+               <div>
+                <tasktext>
+                  <Textarea defaultValue={this.props.data.text}
+                            onChange={this.editText}/>
+                </tasktext>
+
+                <taskoptions>
+                  <taskedit onClick={this.editTodo}>
+                    <i className="icon icon-placeholder ion-edit"></i>
+                  </taskedit>
+                  <i 
+                   className="taskdelete" 
+                   onClick={this.removeTodo}
+                  />
+                </taskoptions>
+              </div>
+            </taskbox>
+            
           </div>
-        </taskbox>
+        </todoitembox>
       </todoitemcontainer>
     )
 //    return (
