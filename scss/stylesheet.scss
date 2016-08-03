@@ -1,71 +1,73 @@
-// IMPORTS & VARIABLES
+/* IMPORTS */
+
+// Foundation/Settings
 @import '_settings';
+// Foundation/SCSS
 @import '../node_modules/foundation-sites/scss/foundation';
-@import '../css/ionicons.min';
-
-
-@include foundation-everything(true);
-@include foundation-flex-classes;
-@include foundation-flex-grid;
-
+// Ionicons
+@import 'ionicons';
+// Fonts
 @import 'https://fonts.googleapis.com/css?family=Shadows+Into+Light';
 
-$background: #FFFFFF;
+/* VARIABLES */
 
-// HTML ELEMENTS
+$background: #FFFFFF;
+$main: #F42041;
+//$hightlight:
+$lowlight: #E5E5E5;
+$font-main: 'Shadows Into Light', cursive;
+
+/* SETUP */
+
 * {
   margin: 0;
   padding: 0;
 }
 
-body {
-//  background-color: green;
-}
+@include foundation-everything(true);
 
-// CUSTOM HTML ELEMENTS
-.newtodocontainer {
+/* SEMANTIC CLASSES */
+
+.row-newtodo {
   @include flex-grid-row;
   @include flex-grid-row-align($x: center);
   
+  @include breakpoint(medium) {
+    padding-bottom: 0;
+  }
+  
+  border-bottom: 1px solid;
+  border-bottom-color: $lowlight;
   margin-top: 2em;
-      
-  .inputtask {
+  padding-bottom: 1.1em;
+  
+  .task-input {
     @include flex-grid-column(12);
-    
-    @include breakpoint(large) { 
+    @include breakpoint(medium) { 
       @include flex-grid-column(6);
-    }
-    
-    Textarea {
-      border-color: $background;
-      box-shadow: none;
-      font-family: 'Shadows Into Light', cursive;
-      font-size: 1.5em;
-      resize: none;
     }
   }
   
-  .addtask {
-    
+  .task-add {
     @include flex-grid-column(4);
-      
-    @include breakpoint(large) {
+    @include flex-grid-column-align($y: middle);
+    
+    @include breakpoint(medium) {
       @include flex-grid-column(2);
     }
-    @extend .align-self-middle;
     
     transition: all 500ms ease-in-out;
     
     input {
-      width: 100%;
-      
       background-color: $background;
-      border: 1px solid #F42041;
-      color: #F42041;
-      font-family: 'Shadows Into Light', cursive;
+      border: 1px solid;
+      border-color: $main;
+      color: $main;
+      font-family: $font-main;
       font-size: 1.25em;
       font-weight: bold;
       transition: all 250ms ease-in-out;
+      width: 100%;
       
       &:focus {
         outline: none;
@@ -79,43 +81,49 @@ body {
   }
 }
 
-todoitemcontainer {
-  @extend .row, .align-center;
+.row-todo {
+  @include flex-grid-row;
+  @include flex-grid-row-align($x: center);
   
-  todoitembox {
-    @extend .large-8, .columns;
+  .container-task {
+    @include flex-grid-column(11);
     
-    margin-top: 1em;
+    @include breakpoint(medium) {
+      @include flex-grid-column(8);
+    }
     
     border-radius: 5px;
     box-shadow: 0px 2px 7px 0px rgba(50, 50, 50, 0.25);
+    margin-top: 1.25em;
     
-    div {
-      @extend .row;
+    .row-task {
+      @include flex-grid-row;
       
-      tasktoggle {
-        @extend .small-1, .large-1, .columns, .align-self-middle;
+      .task-toggle {
+        @include flex-grid-column(1);
+        @include flex-grid-column-align($y: middle);
         
-        align-items: center;
-        display: flex;
-        flex-direction: column;
+        @include breakpoint(medium) {
+          @include flex-grid-column(1);
+        }
+        
+        input {
+          @include flex-grid-row;
+          @include flex-grid-row-align(center);
+        }
       }
       
-      taskbox {
-        @extend .small-11, .large-11, .columns;
+      .task-container-taskitems {
+        @include flex-grid-column(11);
         
-        div {
+        .row-taskitems {
           @extend .row;
           
-          tasktext {
-            @extend .small-12, .large-10;
+          .taskitems-text {
+            @include flex-grid-column(12);
             
-            Textarea {
-              border-color: $background !important;
-              box-shadow: none !important;
-              font-family: 'Shadows Into Light', cursive !important;
-              font-size: 1.5em !important;
-              resize: none;
+            @include breakpoint(medium) {
+              @include flex-grid-column(10);
             }
           }
           
@@ -140,4 +148,12 @@ todoitemcontainer {
 
 todolistcontainer {
   justify-content: center;
+}
+
+.task-textarea {
+  border-color: $background;
+  box-shadow: none;
+  font-family: $font-main;
+  font-size: 1.5em;
+  resize: none;
 }

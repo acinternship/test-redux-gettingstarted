@@ -88,17 +88,22 @@ class NewTodo extends React.Component {
   
   render() {
     return (
-      <div className="newtodocontainer">
-        <div className="inputtask">
-          <Textarea placeholder="Type in your new task"
+      <div className="row-newtodo">
+        
+        <div className="task-input">
+          <Textarea className="task-textarea"
+                    placeholder="Type in your new task"
                     type="text"
                     onChange={this.setText}
-                    ref="newtodotext"></Textarea>
+                    ref="newtodotext"
+          />
         </div>
-        <div className="addtask">
+        
+        <div className="task-add">
           <input type="submit"
                  value="ADD TASK"
-                 onClick={this.addTodo}/>
+                 onClick={this.addTodo}
+          />
         </div>
       </div>
     )
@@ -145,37 +150,42 @@ class TodoItem extends React.Component {
   
   render() {
     return (
-      <todoitemcontainer>
-        <todoitembox>
-          <div>
-           
-            <tasktoggle>
+      <div className="row-todo">
+        
+        <div className="container-task">  
+          <div className="row-task">
+            
+            <div className="task-toggle">
               <input type="checkbox"
-                     onClick={this.toggleTodo}/>
-            </tasktoggle>
+                     onClick={this.toggleTodo}
+              />
+            </div>
 
-            <taskbox>
-               <div>
-                <tasktext>
-                  <Textarea defaultValue={this.props.data.text}
-                            onChange={this.editText}/>
-                </tasktext>
+            <div className="task-container-taskitems">
+               <div className="row-taskitems">
+               
+                 <Textarea className="task-textarea taskitems-text"
+                          defaultValue={this.props.data.text}
+                          onChange={this.editText}
+                 />
 
                 <taskoptions>
                   <taskedit onClick={this.editTodo}>
                     <i className="icon icon-placeholder ion-edit"></i>
                   </taskedit>
                   <i 
-                   className="taskdelete" 
+                   className="taskdelete"
                    onClick={this.removeTodo}
                   />
                 </taskoptions>
+                
               </div>
-            </taskbox>
+            </div>
             
           </div>
-        </todoitembox>
-      </todoitemcontainer>
+        </div>
+        
+      </div>
     )
 //    return (
 //      <tr>
