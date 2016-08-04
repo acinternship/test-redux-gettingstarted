@@ -127,10 +127,16 @@ class TodoItem extends React.Component {
   }
   
   editTodo(event) {
+    var task = event.target.parentNode.parentNode.parentNode.children[0]
+    
+    
+    this.refs.task.event.target.focus();
+    this.refs.task.event.target.select();
+    
     store.dispatch({
       type: 'EDIT_TODO',
       id: this.props.data.id,
-      text: this.state.text
+      text: this.props.data.text
     })
   }
   
@@ -161,7 +167,8 @@ class TodoItem extends React.Component {
             </div>
             <div className="task-taskitems-container">
               <div className="taskitems-row">
-                <Textarea className="task-textarea taskitems-text"
+                <Textarea ref="task"
+                          className="task-textarea taskitems-text"
                           defaultValue={this.props.data.text}
                           onChange={this.editText}
                  />
