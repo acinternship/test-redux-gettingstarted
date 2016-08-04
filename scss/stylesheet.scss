@@ -58,7 +58,7 @@ $font-settings: 'PT Sans', sans-serif;
       @include flex-grid-column(2);
     }
     
-    transition: all 500ms ease-in-out;
+    transition: all 250ms ease-in-out;
     
     input {
       background-color: $color-main;
@@ -119,9 +119,23 @@ $font-settings: 'PT Sans', sans-serif;
           @include flex-grid-column(1);
         }
         
-        input {
-          @include flex-grid-row;
-          @include flex-grid-row-align($x: center);
+        #toggle {
+          @extend .ion-ios-circle-outline;
+          
+          color: $color-main;
+          font-size: 1.75em;
+          margin-bottom: auto;
+          margin-top: auto;
+          transition: all 250ms ease-in-out;
+           -webkit-appearance: none;
+          
+          &:focus {
+            outline: none;
+          }
+          
+          &:checked {
+            @extend .ion-ios-checkmark-outline;
+          }
         }
       }
       
@@ -214,4 +228,9 @@ todolistcontainer {
   font-family: $font-main;
   font-size: 1.5em;
   resize: none;
+  
+  &:focus {
+    border-color: $color-background;
+    box-shadow: none;
+  }
 }

@@ -339,8 +339,10 @@
 .ion-ios-checkmark:before,
 .ion-ios-checkmark-empty:before,
 .ion-ios-checkmark-outline:before,
+.todo-row .task-container .task-row .task-toggle #toggle:checked:before,
 .ion-ios-circle-filled:before,
 .ion-ios-circle-outline:before,
+.todo-row .task-container .task-row .task-toggle #toggle:before,
 .ion-ios-clock:before,
 .ion-ios-clock-outline:before,
 .ion-ios-close:before,
@@ -1706,13 +1708,13 @@
 .ion-ios-checkmark-empty:before {
   content: ""; }
 
-.ion-ios-checkmark-outline:before {
+.ion-ios-checkmark-outline:before, .todo-row .task-container .task-row .task-toggle #toggle:checked:before {
   content: ""; }
 
 .ion-ios-circle-filled:before {
   content: ""; }
 
-.ion-ios-circle-outline:before {
+.ion-ios-circle-outline:before, .todo-row .task-container .task-row .task-toggle #toggle:before {
   content: ""; }
 
 .ion-ios-clock:before {
@@ -6406,7 +6408,7 @@ table.hover tr:nth-of-type(even):hover {
     padding-right: 0.625rem;
     max-width: 33.33333%;
     align-self: center;
-    transition: all 500ms ease-in-out; }
+    transition: all 250ms ease-in-out; }
     @media screen and (min-width: 40em) {
       .newtodo-row .task-add {
         padding-left: 0.9375rem;
@@ -6503,13 +6505,15 @@ table.hover tr:nth-of-type(even):hover {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
 
-        .todo-row .task-container .task-row .task-toggle input {
-          max-width: 75rem;
-          margin-left: auto;
-          margin-right: auto;
-          display: flex;
-          flex-flow: row wrap;
-          justify-content: center; }
+        .todo-row .task-container .task-row .task-toggle #toggle {
+          color: #F42041;
+          font-size: 1.75em;
+          margin-bottom: auto;
+          margin-top: auto;
+          transition: all 250ms ease-in-out;
+          -webkit-appearance: none; }
+          .todo-row .task-container .task-row .task-toggle #toggle:focus {
+            outline: none; }
       .todo-row .task-container .task-row .task-taskitems-container {
         flex: 0 0 91.66667%;
         max-width: 91.66667%; }
@@ -6603,5 +6607,8 @@ todolistcontainer {
   font-family: "Shadows Into Light", cursive;
   font-size: 1.5em;
   resize: none; }
+  .task-textarea:focus {
+    border-color: #FFFFFF;
+    box-shadow: none; }
 
 /*# sourceMappingURL=stylesheet.css.map */

@@ -154,7 +154,8 @@ class TodoItem extends React.Component {
         <div className="task-container">
           <div className="task-row">
             <div className="task-toggle">
-              <input type="checkbox"
+              <input id="toggle"
+                     type="checkbox"
                      onClick={this.toggleTodo}
               />
             </div>
