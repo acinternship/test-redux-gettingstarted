@@ -7,15 +7,17 @@
 // Ionicons
 @import 'ionicons';
 // Fonts
+@import 'https://fonts.googleapis.com/css?family=PT+Sans:400,700';
 @import 'https://fonts.googleapis.com/css?family=Shadows+Into+Light';
 
 /* VARIABLES */
 
-$background: #FFFFFF;
-$main: #F42041;
-//$hightlight:
-$lowlight: #E5E5E5;
+$color-background: #FFFFFF;
+$color-main: #F42041;
+$color-highlight: #4CAF50;
+$color-lowlight: #E5E5E5;
 $font-main: 'Shadows Into Light', cursive;
+$font-settings: 'PT Sans', sans-serif;
 
 /* SETUP */
 
@@ -28,7 +30,7 @@ $font-main: 'Shadows Into Light', cursive;
 
 /* SEMANTIC CLASSES */
 
-.row-newtodo {
+.newtodo-row {
   @include flex-grid-row;
   @include flex-grid-row-align($x: center);
   
@@ -37,7 +39,7 @@ $font-main: 'Shadows Into Light', cursive;
   }
   
   border-bottom: 1px solid;
-  border-bottom-color: $lowlight;
+  border-bottom-color: $color-lowlight;
   margin-top: 2em;
   padding-bottom: 1.1em;
   
@@ -59,15 +61,24 @@ $font-main: 'Shadows Into Light', cursive;
     transition: all 500ms ease-in-out;
     
     input {
-      background-color: $background;
+      background-color: $color-main;
       border: 1px solid;
-      border-color: $main;
-      color: $main;
+      border-color: $color-main;
+      border-radius: 5px;
+      box-shadow: 0px 2px 3px 0px rgba(50, 50, 50, 0.8);
+      color: $color-background;
       font-family: $font-main;
       font-size: 1.25em;
       font-weight: bold;
       transition: all 250ms ease-in-out;
       width: 100%;
+      
+      &:active {
+        outline: none;
+        background-color: $color-highlight;
+        border-color: $color-highlight;
+        box-shadow: 0px 2px 3px 0px rgba(50, 50, 50, 0.3);
+      }
       
       &:focus {
         outline: none;
@@ -75,17 +86,18 @@ $font-main: 'Shadows Into Light', cursive;
       
       &:hover {
         border: 1px solid #CD1B9C;
-        color: #CD1B9C;
+        background-color: $color-highlight;
+        border-color: $color-highlight;
       }
     }
   }
 }
 
-.row-todo {
+.todo-row {
   @include flex-grid-row;
   @include flex-grid-row-align($x: center);
   
-  .container-task {
+  .task-container {
     @include flex-grid-column(11);
     
     @include breakpoint(medium) {
@@ -96,7 +108,7 @@ $font-main: 'Shadows Into Light', cursive;
     box-shadow: 0px 2px 7px 0px rgba(50, 50, 50, 0.25);
     margin-top: 1.25em;
     
-    .row-task {
+    .task-row {
       @include flex-grid-row;
       
       .task-toggle {
@@ -109,15 +121,16 @@ $font-main: 'Shadows Into Light', cursive;
         
         input {
           @include flex-grid-row;
-          @include flex-grid-row-align(center);
+          @include flex-grid-row-align($x: center);
         }
       }
       
-      .task-container-taskitems {
-        @include flex-grid-column(11);
+      .task-taskitems-container {
+        @include flex-grid-column($columns: 11, $gutter: 0);
         
-        .row-taskitems {
-          @extend .row;
+        .taskitems-row {
+          @include flex-grid-row;
+          @include flex-grid-row-align($x: right);
           
           .taskitems-text {
             @include flex-grid-column(12);
@@ -127,17 +140,62 @@ $font-main: 'Shadows Into Light', cursive;
             }
           }
           
-          taskoptions {
-            @extend .small-2, .large-2, .align-self-middle;
+          .taskitems-options-container {
+            @include flex-grid-column($columns: 3, $gutter: 0);
+            @include flex-grid-column-align($y: middle);
             
-            align-items: center;
-            display: flex;
-            justify-content: space-around;
+            @include breakpoint(medium) {
+              @include flex-grid-column($columns: 2, $gutter: 0);
+              
+              padding-bottom: 0;
+            }
             
-            taskedit {}
+            padding-bottom: 1em;
+            padding-right: 1em;
             
-            .taskdelete {
-              @extend .ion-trash-a;
+            .options-row {
+              @include flex-grid-row;
+              @include flex-grid-row-align($x: justify);
+              
+              color: $color-main;
+              font-size: 1.25em;
+              transition: all 250ms ease-in-out;
+              
+              .options-edit {
+                @include flex-grid-column(4);
+                
+                @extend .ion-edit;
+                
+                cursor: pointer;
+                
+                &:hover {
+                  &::before{
+                    content: 'EDIT';
+                    font-family: $font-settings;
+                    font-size: .75em;
+                    font-weight: 700;
+                    margin-left: -0.25em;
+                  }
+                }
+              }
+              
+              .options-delete {
+                @include flex-grid-column(4);
+                
+                @extend .ion-trash-a;
+                
+                cursor: pointer;
+                
+                &:hover {
+                  &::before{
+                    content: 'DELETE';
+                    font-family: $font-settings;
+                    font-size: .75em;
+                    font-weight: 700;
+                    margin-left: -1.5em;
+                  }
+                }
+              }
             }
           }
         }
@@ -151,7 +209,7 @@ todolistcontainer {
 }
 
 .task-textarea {
-  border-color: $background;
+  border-color: $color-background;
   box-shadow: none;
   font-family: $font-main;
   font-size: 1.5em;

@@ -17,6 +17,7 @@
   used under CC BY http://creativecommons.org/licenses/by/4.0/
   Modified icons to fit ioniconΓÇÖs grid from original.
 */
+@import "https://fonts.googleapis.com/css?family=PT+Sans:400,700";
 @import "https://fonts.googleapis.com/css?family=Shadows+Into+Light";
 @font-face {
   font-family: "Ionicons";
@@ -240,6 +241,7 @@
 .ion-earth:before,
 .ion-easel:before,
 .ion-edit:before,
+.todo-row .task-container .task-row .task-taskitems-container .taskitems-row .taskitems-options-container .options-row .options-edit:before,
 .ion-egg:before,
 .ion-eject:before,
 .ion-email:before,
@@ -737,7 +739,7 @@
 .ion-toggle-filled:before,
 .ion-transgender:before,
 .ion-trash-a:before,
-.row-todo .container-task .row-task .task-container-taskitems .row-taskitems taskoptions .taskdelete:before,
+.todo-row .task-container .task-row .task-taskitems-container .taskitems-row .taskitems-options-container .options-row .options-delete:before,
 .ion-trash-b:before,
 .ion-trophy:before,
 .ion-tshirt:before,
@@ -1413,7 +1415,7 @@
 .ion-easel:before {
   content: ""; }
 
-.ion-edit:before {
+.ion-edit:before, .todo-row .task-container .task-row .task-taskitems-container .taskitems-row .taskitems-options-container .options-row .options-edit:before {
   content: ""; }
 
 .ion-egg:before {
@@ -2904,7 +2906,7 @@
 .ion-transgender:before {
   content: ""; }
 
-.ion-trash-a:before, .row-todo .container-task .row-task .task-container-taskitems .row-taskitems taskoptions .taskdelete:before {
+.ion-trash-a:before, .todo-row .task-container .task-row .task-taskitems-container .taskitems-row .taskitems-options-container .options-row .options-delete:before {
   content: ""; }
 
 .ion-trash-b:before {
@@ -3399,23 +3401,23 @@ button {
 .is-hidden {
   display: none !important; }
 
-.row, .row-todo .container-task .row-task .task-container-taskitems .row-taskitems {
+.row {
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   flex-flow: row wrap; }
-  .row .row, .row-todo .container-task .row-task .task-container-taskitems .row-taskitems .row, .row .row-todo .container-task .row-task .task-container-taskitems .row-taskitems, .row-todo .container-task .row-task .task-container-taskitems .row .row-taskitems, .row-todo .container-task .row-task .task-container-taskitems .row-taskitems .row-taskitems {
+  .row .row {
     max-width: none;
     margin-left: -0.625rem;
     margin-right: -0.625rem; }
     @media screen and (min-width: 40em) {
-      .row .row, .row-todo .container-task .row-task .task-container-taskitems .row-taskitems .row, .row .row-todo .container-task .row-task .task-container-taskitems .row-taskitems, .row-todo .container-task .row-task .task-container-taskitems .row .row-taskitems, .row-todo .container-task .row-task .task-container-taskitems .row-taskitems .row-taskitems {
+      .row .row {
         margin-left: -0.9375rem;
         margin-right: -0.9375rem; } }
-  .row.expanded, .row-todo .container-task .row-task .task-container-taskitems .expanded.row-taskitems {
+  .row.expanded {
     max-width: none; }
-  .row.collapse > .column, .row-todo .container-task .row-task .task-container-taskitems .collapse.row-taskitems > .column, .row.collapse > .columns, .row-todo .container-task .row-task .task-container-taskitems .collapse.row-taskitems > .columns {
+  .row.collapse > .column, .row.collapse > .columns {
     padding-left: 0;
     padding-right: 0; }
 
@@ -3429,10 +3431,10 @@ button {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
 
-.column.row.row, .row.row.columns, .row-todo .container-task .row-task .task-container-taskitems .columns.row-taskitems, .row-todo .container-task .row-task .task-container-taskitems .column.row-taskitems {
+.column.row.row, .row.row.columns {
   float: none;
   display: block; }
-  .row .column.row.row, .row-todo .container-task .row-task .task-container-taskitems .row-taskitems .column.row.row, .row .row.row.columns, .row-todo .container-task .row-task .task-container-taskitems .row-taskitems .row.row.columns, .row .row-todo .container-task .row-task .task-container-taskitems .columns.row-taskitems, .row-todo .container-task .row-task .task-container-taskitems .row .columns.row-taskitems, .row-todo .container-task .row-task .task-container-taskitems .row-taskitems .columns.row-taskitems, .row .row-todo .container-task .row-task .task-container-taskitems .column.row-taskitems, .row-todo .container-task .row-task .task-container-taskitems .row .column.row-taskitems, .row-todo .container-task .row-task .task-container-taskitems .row-taskitems .column.row-taskitems {
+  .row .column.row.row, .row .row.row.columns {
     padding-left: 0;
     padding-right: 0;
     margin-left: 0;
@@ -3445,7 +3447,7 @@ button {
 .small-offset-0 {
   margin-left: 0%; }
 
-.small-2, .row-todo .container-task .row-task .task-container-taskitems .row-taskitems taskoptions {
+.small-2 {
   flex: 0 0 16.66667%;
   max-width: 16.66667%; }
 
@@ -3749,10 +3751,10 @@ button {
 @media screen and (min-width: 40em) and (min-width: 40em) {
   .medium-expand {
     flex: 1 1 0px; } }
-.row.medium-unstack > .column, .row-todo .container-task .row-task .task-container-taskitems .medium-unstack.row-taskitems > .column, .row.medium-unstack > .columns, .row-todo .container-task .row-task .task-container-taskitems .medium-unstack.row-taskitems > .columns {
+.row.medium-unstack > .column, .row.medium-unstack > .columns {
   flex: 0 0 100%; }
   @media screen and (min-width: 40em) {
-    .row.medium-unstack > .column, .row-todo .container-task .row-task .task-container-taskitems .medium-unstack.row-taskitems > .column, .row.medium-unstack > .columns, .row-todo .container-task .row-task .task-container-taskitems .medium-unstack.row-taskitems > .columns {
+    .row.medium-unstack > .column, .row.medium-unstack > .columns {
       flex: 1 1 0px; } }
 @media screen and (min-width: 40em) {
   .medium-collapse > .column, .medium-collapse > .columns {
@@ -3770,7 +3772,7 @@ button {
   .large-offset-0 {
     margin-left: 0%; }
 
-  .large-2, .row-todo .container-task .row-task .task-container-taskitems .row-taskitems taskoptions {
+  .large-2 {
     flex: 0 0 16.66667%;
     max-width: 16.66667%; }
 
@@ -3915,10 +3917,10 @@ button {
 @media screen and (min-width: 64em) and (min-width: 64em) {
   .large-expand {
     flex: 1 1 0px; } }
-.row.large-unstack > .column, .row-todo .container-task .row-task .task-container-taskitems .large-unstack.row-taskitems > .column, .row.large-unstack > .columns, .row-todo .container-task .row-task .task-container-taskitems .large-unstack.row-taskitems > .columns {
+.row.large-unstack > .column, .row.large-unstack > .columns {
   flex: 0 0 100%; }
   @media screen and (min-width: 64em) {
-    .row.large-unstack > .column, .row-todo .container-task .row-task .task-container-taskitems .large-unstack.row-taskitems > .column, .row.large-unstack > .columns, .row-todo .container-task .row-task .task-container-taskitems .large-unstack.row-taskitems > .columns {
+    .row.large-unstack > .column, .row.large-unstack > .columns {
       flex: 1 1 0px; } }
 @media screen and (min-width: 64em) {
   .large-collapse > .column, .large-collapse > .columns {
@@ -6300,7 +6302,7 @@ table.hover tr:nth-of-type(even):hover {
 .align-middle {
   align-items: center; }
 
-.align-self-middle, .row-todo .container-task .row-task .task-container-taskitems .row-taskitems taskoptions {
+.align-self-middle {
   align-self: center; }
 
 .align-stretch {
@@ -6364,7 +6366,7 @@ table.hover tr:nth-of-type(even):hover {
   .large-order-6 {
     order: 6; } }
 /* SEMANTIC CLASSES */
-.row-newtodo {
+.newtodo-row {
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto;
@@ -6376,29 +6378,29 @@ table.hover tr:nth-of-type(even):hover {
   margin-top: 2em;
   padding-bottom: 1.1em; }
   @media screen and (min-width: 40em) {
-    .row-newtodo {
+    .newtodo-row {
       padding-bottom: 0; } }
-  .row-newtodo .task-input {
+  .newtodo-row .task-input {
     flex: 0 0 100%;
     padding-left: 0.625rem;
     padding-right: 0.625rem;
     max-width: 100%; }
     @media screen and (min-width: 40em) {
-      .row-newtodo .task-input {
+      .newtodo-row .task-input {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
     @media screen and (min-width: 40em) {
-      .row-newtodo .task-input {
+      .newtodo-row .task-input {
         flex: 0 0 50%;
         padding-left: 0.625rem;
         padding-right: 0.625rem;
         max-width: 50%; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
-    .row-newtodo .task-input {
+    .newtodo-row .task-input {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
 
-  .row-newtodo .task-add {
+  .newtodo-row .task-add {
     flex: 0 0 33.33333%;
     padding-left: 0.625rem;
     padding-right: 0.625rem;
@@ -6406,44 +6408,52 @@ table.hover tr:nth-of-type(even):hover {
     align-self: center;
     transition: all 500ms ease-in-out; }
     @media screen and (min-width: 40em) {
-      .row-newtodo .task-add {
+      .newtodo-row .task-add {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
     @media screen and (min-width: 40em) {
-      .row-newtodo .task-add {
+      .newtodo-row .task-add {
         flex: 0 0 16.66667%;
         padding-left: 0.625rem;
         padding-right: 0.625rem;
         max-width: 16.66667%; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
-    .row-newtodo .task-add {
+    .newtodo-row .task-add {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
 
-    .row-newtodo .task-add input {
-      background-color: #FFFFFF;
+    .newtodo-row .task-add input {
+      background-color: #F42041;
       border: 1px solid;
       border-color: #F42041;
-      color: #F42041;
+      border-radius: 5px;
+      box-shadow: 0px 2px 3px 0px rgba(50, 50, 50, 0.8);
+      color: #FFFFFF;
       font-family: "Shadows Into Light", cursive;
       font-size: 1.25em;
       font-weight: bold;
       transition: all 250ms ease-in-out;
       width: 100%; }
-      .row-newtodo .task-add input:focus {
+      .newtodo-row .task-add input:active {
+        outline: none;
+        background-color: #4CAF50;
+        border-color: #4CAF50;
+        box-shadow: 0px 2px 3px 0px rgba(50, 50, 50, 0.3); }
+      .newtodo-row .task-add input:focus {
         outline: none; }
-      .row-newtodo .task-add input:hover {
+      .newtodo-row .task-add input:hover {
         border: 1px solid #CD1B9C;
-        color: #CD1B9C; }
+        background-color: #4CAF50;
+        border-color: #4CAF50; }
 
-.row-todo {
+.todo-row {
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto;
   display: flex;
   flex-flow: row wrap;
   justify-content: center; }
-  .row-todo .container-task {
+  .todo-row .task-container {
     flex: 0 0 91.66667%;
     padding-left: 0.625rem;
     padding-right: 0.625rem;
@@ -6452,87 +6462,137 @@ table.hover tr:nth-of-type(even):hover {
     box-shadow: 0px 2px 7px 0px rgba(50, 50, 50, 0.25);
     margin-top: 1.25em; }
     @media screen and (min-width: 40em) {
-      .row-todo .container-task {
+      .todo-row .task-container {
         padding-left: 0.9375rem;
         padding-right: 0.9375rem; } }
     @media screen and (min-width: 40em) {
-      .row-todo .container-task {
+      .todo-row .task-container {
         flex: 0 0 66.66667%;
         padding-left: 0.625rem;
         padding-right: 0.625rem;
         max-width: 66.66667%; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
-    .row-todo .container-task {
+    .todo-row .task-container {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
 
-    .row-todo .container-task .row-task {
+    .todo-row .task-container .task-row {
       max-width: 75rem;
       margin-left: auto;
       margin-right: auto;
       display: flex;
       flex-flow: row wrap; }
-      .row-todo .container-task .row-task .task-toggle {
+      .todo-row .task-container .task-row .task-toggle {
         flex: 0 0 8.33333%;
         padding-left: 0.625rem;
         padding-right: 0.625rem;
         max-width: 8.33333%;
         align-self: center; }
         @media screen and (min-width: 40em) {
-          .row-todo .container-task .row-task .task-toggle {
+          .todo-row .task-container .task-row .task-toggle {
             padding-left: 0.9375rem;
             padding-right: 0.9375rem; } }
         @media screen and (min-width: 40em) {
-          .row-todo .container-task .row-task .task-toggle {
+          .todo-row .task-container .task-row .task-toggle {
             flex: 0 0 8.33333%;
             padding-left: 0.625rem;
             padding-right: 0.625rem;
             max-width: 8.33333%; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
-    .row-todo .container-task .row-task .task-toggle {
+    .todo-row .task-container .task-row .task-toggle {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
 
-        .row-todo .container-task .row-task .task-toggle input {
+        .todo-row .task-container .task-row .task-toggle input {
           max-width: 75rem;
           margin-left: auto;
           margin-right: auto;
           display: flex;
           flex-flow: row wrap;
           justify-content: center; }
-      .row-todo .container-task .row-task .task-container-taskitems {
+      .todo-row .task-container .task-row .task-taskitems-container {
         flex: 0 0 91.66667%;
-        padding-left: 0.625rem;
-        padding-right: 0.625rem;
         max-width: 91.66667%; }
-        @media screen and (min-width: 40em) {
-          .row-todo .container-task .row-task .task-container-taskitems {
-            padding-left: 0.9375rem;
-            padding-right: 0.9375rem; } }
-        .row-todo .container-task .row-task .task-container-taskitems .row-taskitems .taskitems-text {
-          flex: 0 0 100%;
-          padding-left: 0.625rem;
-          padding-right: 0.625rem;
-          max-width: 100%; }
-          @media screen and (min-width: 40em) {
-            .row-todo .container-task .row-task .task-container-taskitems .row-taskitems .taskitems-text {
-              padding-left: 0.9375rem;
-              padding-right: 0.9375rem; } }
-          @media screen and (min-width: 40em) {
-            .row-todo .container-task .row-task .task-container-taskitems .row-taskitems .taskitems-text {
-              flex: 0 0 83.33333%;
-              padding-left: 0.625rem;
-              padding-right: 0.625rem;
-              max-width: 83.33333%; } }
+        .todo-row .task-container .task-row .task-taskitems-container .taskitems-row {
+          max-width: 75rem;
+          margin-left: auto;
+          margin-right: auto;
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: flex-end; }
+          .todo-row .task-container .task-row .task-taskitems-container .taskitems-row .taskitems-text {
+            flex: 0 0 100%;
+            padding-left: 0.625rem;
+            padding-right: 0.625rem;
+            max-width: 100%; }
+            @media screen and (min-width: 40em) {
+              .todo-row .task-container .task-row .task-taskitems-container .taskitems-row .taskitems-text {
+                padding-left: 0.9375rem;
+                padding-right: 0.9375rem; } }
+            @media screen and (min-width: 40em) {
+              .todo-row .task-container .task-row .task-taskitems-container .taskitems-row .taskitems-text {
+                flex: 0 0 83.33333%;
+                padding-left: 0.625rem;
+                padding-right: 0.625rem;
+                max-width: 83.33333%; } }
   @media screen and (min-width: 40em) and (min-width: 40em) {
-    .row-todo .container-task .row-task .task-container-taskitems .row-taskitems .taskitems-text {
+    .todo-row .task-container .task-row .task-taskitems-container .taskitems-row .taskitems-text {
       padding-left: 0.9375rem;
       padding-right: 0.9375rem; } }
 
-        .row-todo .container-task .row-task .task-container-taskitems .row-taskitems taskoptions {
-          align-items: center;
-          display: flex;
-          justify-content: space-around; }
+          .todo-row .task-container .task-row .task-taskitems-container .taskitems-row .taskitems-options-container {
+            flex: 0 0 25%;
+            max-width: 25%;
+            align-self: center;
+            padding-bottom: 1em;
+            padding-right: 1em; }
+            @media screen and (min-width: 40em) {
+              .todo-row .task-container .task-row .task-taskitems-container .taskitems-row .taskitems-options-container {
+                flex: 0 0 16.66667%;
+                max-width: 16.66667%;
+                padding-bottom: 0; } }
+            .todo-row .task-container .task-row .task-taskitems-container .taskitems-row .taskitems-options-container .options-row {
+              max-width: 75rem;
+              margin-left: auto;
+              margin-right: auto;
+              display: flex;
+              flex-flow: row wrap;
+              justify-content: space-between;
+              color: #F42041;
+              font-size: 1.25em;
+              transition: all 250ms ease-in-out; }
+              .todo-row .task-container .task-row .task-taskitems-container .taskitems-row .taskitems-options-container .options-row .options-edit {
+                flex: 0 0 33.33333%;
+                padding-left: 0.625rem;
+                padding-right: 0.625rem;
+                max-width: 33.33333%;
+                cursor: pointer; }
+                @media screen and (min-width: 40em) {
+                  .todo-row .task-container .task-row .task-taskitems-container .taskitems-row .taskitems-options-container .options-row .options-edit {
+                    padding-left: 0.9375rem;
+                    padding-right: 0.9375rem; } }
+                .todo-row .task-container .task-row .task-taskitems-container .taskitems-row .taskitems-options-container .options-row .options-edit:hover::before {
+                  content: 'EDIT';
+                  font-family: "PT Sans", sans-serif;
+                  font-size: .75em;
+                  font-weight: 700;
+                  margin-left: -0.25em; }
+              .todo-row .task-container .task-row .task-taskitems-container .taskitems-row .taskitems-options-container .options-row .options-delete {
+                flex: 0 0 33.33333%;
+                padding-left: 0.625rem;
+                padding-right: 0.625rem;
+                max-width: 33.33333%;
+                cursor: pointer; }
+                @media screen and (min-width: 40em) {
+                  .todo-row .task-container .task-row .task-taskitems-container .taskitems-row .taskitems-options-container .options-row .options-delete {
+                    padding-left: 0.9375rem;
+                    padding-right: 0.9375rem; } }
+                .todo-row .task-container .task-row .task-taskitems-container .taskitems-row .taskitems-options-container .options-row .options-delete:hover::before {
+                  content: 'DELETE';
+                  font-family: "PT Sans", sans-serif;
+                  font-size: .75em;
+                  font-weight: 700;
+                  margin-left: -1.5em; }
 
 todolistcontainer {
   justify-content: center; }

@@ -88,7 +88,7 @@ class NewTodo extends React.Component {
   
   render() {
     return (
-      <div className="row-newtodo">
+      <div className="newtodo-row">
         
         <div className="task-input">
           <Textarea className="task-textarea"
@@ -150,41 +150,34 @@ class TodoItem extends React.Component {
   
   render() {
     return (
-      <div className="row-todo">
-        
-        <div className="container-task">  
-          <div className="row-task">
-            
+      <div className="todo-row">
+        <div className="task-container">
+          <div className="task-row">
             <div className="task-toggle">
               <input type="checkbox"
                      onClick={this.toggleTodo}
               />
             </div>
-
-            <div className="task-container-taskitems">
-               <div className="row-taskitems">
-               
-                 <Textarea className="task-textarea taskitems-text"
+            <div className="task-taskitems-container">
+              <div className="taskitems-row">
+                <Textarea className="task-textarea taskitems-text"
                           defaultValue={this.props.data.text}
                           onChange={this.editText}
                  />
-
-                <taskoptions>
-                  <taskedit onClick={this.editTodo}>
-                    <i className="icon icon-placeholder ion-edit"></i>
-                  </taskedit>
-                  <i 
-                   className="taskdelete"
-                   onClick={this.removeTodo}
-                  />
-                </taskoptions>
-                
+                <div className="taskitems-options-container">
+                  <div className="options-row">
+                    <i className="options-edit"
+                       onClick={this.editTodo}
+                    />
+                    <i className="options-delete"
+                       onClick={this.removeTodo}
+                    />
+                  </div>
+                </div>
               </div>
             </div>
-            
           </div>
         </div>
-        
       </div>
     )
 //    return (
