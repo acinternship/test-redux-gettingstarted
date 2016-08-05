@@ -6507,6 +6507,7 @@ table.hover tr:nth-of-type(even):hover {
 
         .todo-row .task-container .task-row .task-toggle #toggle {
           color: #F42041;
+          cursor: pointer;
           font-size: 1.75em;
           margin-bottom: auto;
           margin-top: auto;
@@ -6514,6 +6515,8 @@ table.hover tr:nth-of-type(even):hover {
           -webkit-appearance: none; }
           .todo-row .task-container .task-row .task-toggle #toggle:focus {
             outline: none; }
+          .todo-row .task-container .task-row .task-toggle #toggle:checked {
+            color: #4CAF50; }
       .todo-row .task-container .task-row .task-taskitems-container {
         flex: 0 0 91.66667%;
         max-width: 91.66667%; }
@@ -6610,5 +6613,8 @@ todolistcontainer {
   .task-textarea:focus {
     border-color: #FFFFFF;
     box-shadow: none; }
+  .task-textarea[readonly] {
+    background-color: #FFFFFF;
+    cursor: default; }
 
 /*# sourceMappingURL=stylesheet.css.map */

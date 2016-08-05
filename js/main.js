@@ -116,28 +116,24 @@ class TodoItem extends React.Component {
   constructor(props) {
     super()
     
-    this.editText = this.editText.bind(this)
+//    this.editText = this.editText.bind(this)
     this.editTodo = this.editTodo.bind(this)
     this.removeTodo = this.removeTodo.bind(this)
     this.toggleTodo = this.toggleTodo.bind(this)
+    this.updateTodo = this.updateTodo.bind(this)
   }
   
-  editText(event) {
-    this.setState({text: event.target.value})
-  }
+//  editText(event) {
+//    this.setState({text: event.target.value})
+//  }
   
   editTodo(event) {
+    // var 'task' corresponds to Textarea component
     var task = event.target.parentNode.parentNode.parentNode.children[0]
     
-    
-    this.refs.task.event.target.focus();
-    this.refs.task.event.target.select();
-    
-    store.dispatch({
-      type: 'EDIT_TODO',
-      id: this.props.data.id,
-      text: this.props.data.text
-    })
+    task.focus()
+    task.select()
+    task.readOnly = false
   }
   
   removeTodo() {
@@ -154,6 +150,16 @@ class TodoItem extends React.Component {
     })
   }
   
+  updateTodo(event) {
+    ReactDOM.findDOMNode(this.refs.task).readOnly = true
+    
+    store.dispatch({
+      type: 'EDIT_TODO',
+      id: this.props.data.id,
+      text: event.target.value
+    })
+  }
+  
   render() {
     return (
       <div className="todo-row">
@@ -167,9 +173,11 @@ class TodoItem extends React.Component {
             </div>
             <div className="task-taskitems-container">
               <div className="taskitems-row">
-                <Textarea ref="task"
+                <Textarea readOnly
+                          ref="task"
                           className="task-textarea taskitems-text"
                           defaultValue={this.props.data.text}
+                          onBlur={this.updateTodo}
                           onChange={this.editText}
                  />
                 <div className="taskitems-options-container">
@@ -188,18 +196,6 @@ class TodoItem extends React.Component {
         </div>
       </div>
     )
-//    return (
-//      <tr>
-//        <td>
-//          <input type="checkbox" onClick={this.toggleTodo}></input>
-//        </td>
-//        <td>
-//          <input defaultValue={this.props.data.text} onChange={this.editText}/>
-//        </td>
-//        <td onClick={this.editTodo}>e</td>
-//        <td onClick={this.removeTodo}>x</td>
-//      </tr>
-//    )
   }
 }
 
@@ -212,23 +208,6 @@ class TodoList extends React.Component {
     )
     
     return <todolistcontainer>{todoitems}</todolistcontainer>
-  
-//    return (
-//      <table className="hover">
-//        <thead>
-//          <tr>
-//            <th width="50"></th>
-//            <th width="500"></th>
-//            <th width="50"></th>
-//            <th width="50"></th>
-//          </tr>
-//        </thead>
-//        <tbody>
-//          {todoitems}
-//        </tbody>
-//      </table>
-//    )
-    
   }
 }
 

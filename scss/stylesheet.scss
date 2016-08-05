@@ -123,6 +123,7 @@ $font-settings: 'PT Sans', sans-serif;
           @extend .ion-ios-circle-outline;
           
           color: $color-main;
+          cursor: pointer;
           font-size: 1.75em;
           margin-bottom: auto;
           margin-top: auto;
@@ -135,6 +136,8 @@ $font-settings: 'PT Sans', sans-serif;
           
           &:checked {
             @extend .ion-ios-checkmark-outline;
+            
+            color: $color-highlight;
           }
         }
       }
@@ -232,5 +235,10 @@ todolistcontainer {
   &:focus {
     border-color: $color-background;
     box-shadow: none;
+  }
+  
+  &[readonly] {
+    background-color: $color-background;
+    cursor: default;
   }
 }
