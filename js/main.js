@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom'
 import Textarea from 'react-textarea-autosize'
 import { createStore } from 'redux'
 
+var classNames = require('classnames')
+
 /*** REDUX STORE ***/
 
 const todoapp = (state = [], action) => {
@@ -58,7 +60,7 @@ var todoID = store.getState().length // Used to set unique identifiers to each t
 /*** REACT COMPONENTS ***/
 
 class NewTodo extends React.Component {
-// Create a new task
+// Create a new task and add it to the task list
   constructor() {
     super()
     
@@ -214,8 +216,7 @@ class TodoList extends React.Component {
 /*** OUTPUT ***/
 
 const App = () => {
-  console.log(store.getState())
-  
+// Renders React Components 
   ReactDOM.render(
     <NewTodo/>, document.getElementById('newtodo')
   )
@@ -225,5 +226,5 @@ const App = () => {
   )
 }
 
-store.subscribe(App)
+store.subscribe(App) // Displays App onscreen
 App()
