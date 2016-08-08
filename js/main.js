@@ -104,6 +104,7 @@ class NewTodo extends React.Component {
         <div className="task-add">
           <input type="submit"
                  value="ADD TASK"
+                 disabled={!this.state.text}
                  onClick={this.addTodo}
           />
         </div>
@@ -216,6 +217,7 @@ class TodoList extends React.Component {
 /*** OUTPUT ***/
 
 const App = () => {
+      console.log(store.getState())
 // Renders React Components 
   ReactDOM.render(
     <NewTodo/>, document.getElementById('newtodo')
